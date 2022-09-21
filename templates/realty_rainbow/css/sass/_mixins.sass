@@ -1,0 +1,44 @@
+=flex($grow: 1, $shrink: 0, $basis: auto, $max-width: 1)
+    // @if $max-width == 1
+    //     @if $basis == auto or $basis == 0
+    //         max-width: none
+    //     @else
+    //         max-width: $basis
+
+    -webkit-flex: $grow $shrink $basis
+    -ms-flex: $grow $shrink $basis
+    flex: $grow $shrink $basis
+
+=flex-box()
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+
+=flex-wrap($value)
+    -webkit-flex-wrap: #{$value}
+    -ms-flex-wrap: #{$value}
+    flex-wrap: #{$value}
+
+=flex-direction($value)
+    -webkit-flex-direction: #{$value}
+    -ms-flex-direction: #{$value}
+    flex-direction: #{$value}
+
+=flex-grow($value)
+    flex-grow: #{$value}
+
+=align-items($value)
+    -webkit-align-items: #{$value}
+    align-items: #{$value}
+
+=justify-content($value)
+    justify-content: #{$value}
+
+=error-text()
+    color: $color-error-text
+    font-size: 0.929em
+
+=user-select($value)
+    -moz-user-select: #{$value}
+    -webkit-user-select: #{$value}
+    -ms-user-select: #{$value}

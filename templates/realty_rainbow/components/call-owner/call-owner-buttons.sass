@@ -1,0 +1,28 @@
+@import "../../css/sass/variables"
+
+.contact-owner-navbar
+    position: fixed
+    left: 0
+    z-index: 99
+    bottom: 0
+    box-shadow: $call-owner-floating-buttons-box-shadow
+
+input.call-owner,
+.side_block input[type=button].call-owner
+    border-color: $call-owner-button-accent-border-color
+    color: $call-owner-button-accent-color
+    background: $call-owner-button-accent-bg-color
+    background-color: $call-owner-button-accent-bg-color
+
+    &:hover
+        background-color: $call-owner-button-accent-hover-bg-color
+        box-shadow: $call-owner-button-accent-hover-box-shadow
+        color: $call-owner-button-accent-hover-color
+
+.side_block input[type=button].call-owner
+    background: $call-owner-sb-button-accent-bg-color
+    color: $call-owner-sb-button-accent-color !important
+
+    &:hover
+        background: $call-owner-sb-button-accent-hover-bg-color !important
+        color: $call-owner-sb-button-accent-hover-color !important

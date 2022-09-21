@@ -1,0 +1,36 @@
+@import "../../css/sass/media"
+
+.icon.delete,
+.icon.cancel,
+.icon.manage,
+.icon.crop,
+.icon.rotate
+    width: 17px
+    height: 17px
+    background: url('../../img/gallery.png') right -489px no-repeat
+    cursor: pointer
+    opacity: 0.7
+    display: inline-block
+
+    +respond-to(pixel_ratio)
+        background: url('../../img/@2x/gallery2.png') right -755px no-repeat
+        background-size: 40px auto
+
+.icon:hover
+    opacity: 1
+
+.icon.manage
+    background-position: left -489px
+
+    +respond-to(pixel_ratio)
+        background-position: 0 -755px
+
+.icon.crop
+    background-position: 0 -513px
+
+    +respond-to(pixel_ratio)
+        background-position: right -776px
+
+svg.icon
+    background: transparent !important
+    fill: $picture_upload_nav_icon_fill_color

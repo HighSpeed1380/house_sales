@@ -1,0 +1,8 @@
+Flynax\Component\Filesystem - ChangeLog
+===
+
+1.0.1 (21-02-2020)
+- FIX: Rename "copy" method to "copyTo" to avoid overloading.
+
+1.0.0 (01-05-2018)
+- Initial public version

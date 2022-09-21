@@ -1,0 +1,77 @@
+@import "../../css/sass/variables"
+@import "../../css/sass/media"
+
+ul.select-type
+    margin-bottom: $gutter / 2
+
+    > li
+        +respond-to(tablet_and_desktop)
+            display: inline-block
+            margin-#{$right}: $gutter
+
+        +respond-to(mobile)
+            margin-bottom: 5px
+
+ul.select-category
+    > li
+        display: none
+
+        +respond-to(desktop_only)
+            white-space: nowrap
+            overflow: auto
+
+        > div
+            +respond-to(desktop_only)
+                float: none
+                display: inline-block
+                vertical-align: top
+
+            +respond-to(tablet)
+                margin-bottom: $spacer
+
+            +respond-to(tablet_only)
+                max-width: 350px
+
+            > select 
+                height: auto
+                min-height: 37px
+                width: 100%
+
+                +respond-to(tablet_and_desktop)
+                    background-position: 1000px 1000px
+                    padding-left: 10px
+                    padding-right: 10px
+
+                > option
+                    text-overflow: ellipsis
+                    white-space: nowrap
+                    overflow: hidden
+
+/* User category */
+span.tmp-category
+    display: block
+    white-space: normal
+    padding-top: 10px
+
+    > span
+        display: none
+
+    &:not(.show-input)
+        .tmp-info
+            display: block
+
+    &.show-input
+        .tmp-input
+            display: block
+
+    .tmp_input
+        span
+            position: relative
+
+            input[type=text]
+                vertical-align: top
+                width: 100%
+                max-width: 50%
+
+            input[type=button]
+                margin: 0 0 0 5px

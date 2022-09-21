@@ -1,0 +1,42 @@
+div.progress {
+    padding: 1px;
+    height: 16px;
+    border: 1px solid #c3cddc;
+    background: white;
+}
+div.progress > div {
+    width: 0px;
+    height: 16px;
+    background: url('gallery.png') 0 -26px repeat-x;
+}
+div.sub_progress {
+    padding: 1px;
+    height: 16px;
+    border: 1px solid #c3cddc;
+    background: white;
+}
+div.sub_progress > div {
+    width: 0px;
+    height: 16px;
+    background: url('gallery.png') 0 -26px repeat-x;
+}
+td.counter {
+    width: 35px;
+    text-align: right;
+    font-size: 12px;
+}
+table.importing td.name {
+    width: 90px;
+    font-size: 12px;
+    padding: 0 5px 3px 0;
+}
+table.importing td.value {
+    padding: 0 5px 3px 0;
+}
+table.importing td.value > label {
+    font-size: 12px;
+    display: inline-block;
+}
+div#dom_area {
+    margin-top:10px;
+}

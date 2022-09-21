@@ -1,0 +1,25 @@
+<svg width="28px" height="32px" viewBox="0 0 28 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M12,0 C5.37066667,0 0,5.29578739 0,11.8248403 C0,15.0715487 1.328,18.0102589 3.476,20.1471556 L11.0573333,27.6167485 C11.5706667,28.1245637 12.4213333,28.1309273 12.9413333,27.6167485 L20.5226667,20.1471556 C22.6706667,18.0102589 24,15.0715487 24,11.8248403 C24,5.29578739 18.628,0 12,0" id="path-1"></path>
+        <filter x="-14.6%" y="-8.9%" width="129.2%" height="125.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.452321105 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Grid_Map-\-≥1200px" transform="translate(-866.000000, -910.000000)">
+            <g id="Map_View" transform="translate(530.000000, 297.000000)">
+                <g id="map" transform="translate(0.000000, 59.000000)">
+                    <g id="point" transform="translate(338.000000, 555.000000)">
+                        <g id="Fill-1">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#e43624" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <path d="M12,7.63631924 C9.79066667,7.63631924 8,9.34558202 8,11.4544789 C8,13.5633757 9.79066667,15.2726385 12,15.2726385 C14.2093333,15.2726385 16,13.5633757 16,11.4544789 C16,9.34558202 14.2093333,7.63631924 12,7.63631924" id="Path" fill="#111111"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

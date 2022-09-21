@@ -1,0 +1,153 @@
+.upload-files {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0 2px;
+ }
+  .upload-files:not(:empty) {
+    margin-top: 2.5rem; }
+  .upload-files > div {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 20px; }
+    .upload-files > div.suspend span.item {
+      box-shadow: 0 0 0 2px #e36565; }
+    .upload-files > div.ui-sortable-helper nav.icons {
+      visibility: hidden; }
+    .upload-files > div.video img.icon.crop {
+      display: none; }
+    .upload-files > div:not(.template-upload) span.item {
+      cursor: move; }
+    .upload-files > div > span {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-flex: 1 1 100%;
+      -ms-flex: 1 1 100%;
+      flex: 1 1 100%; }
+    .upload-files > div span.item {
+      width: 100%;
+      padding-bottom: 66%;
+      position: relative;
+      background: var(--alt-box-bg-color); }
+      .upload-files > div span.item > img,
+      .upload-files > div span.item > span.preview,
+      .upload-files > div span.item > span.preview canvas,
+      .upload-files > div span.item > span.preview video,
+      .upload-files > div span.item > video {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+      .upload-files > div span.item > video {
+        object-fit: contain; }
+      .upload-files > div span.item > .progress {
+        height: 15px;
+        width: 100%;
+        position: absolute;
+        opacity: .5;
+        left: 0;
+        bottom: 0;
+        z-index: 1; }
+        .upload-files > div span.item > .progress > .progress-bar {
+          width: 0%;
+          height: 100%;
+          display: block;
+          background: #5fccff;
+          transition: width 0.2s ease; }
+      .upload-files > div span.item > .prepare {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-grow: 1;
+        justify-content: center; }
+      .upload-files > div span.item > div.error {
+        padding: 5px 10px;
+        border: 2px solid #e36565; }
+        .upload-files > div span.item > div.error > span {
+          color: #de0d2f; }
+          .upload-files > div span.item > div.error > span:after {
+            content: ':'; }
+  .upload-files nav {
+    height: 20px;
+    margin-top: 7px;
+    position: relative;
+    text-align: left; }
+    .upload-files nav.loading:after {
+      content: attr(data-loading);
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: -3px; }
+    .upload-files nav.loading > * {
+      visibility: hidden; }
+    .upload-files nav > * {
+      vertical-align: top;
+      margin-right: 5px; }
+
+.listing-fit-contain .upload-files div span.item > *,
+.listing-fit-contain .upload-files div span.item span canvas {
+  object-fit: contain !important; }
+
+.upload-zone {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 110px;
+  background: var(--upload-zone-background-color);
+  border: 1px #61CE70 dashed;
+  position: relative;
+  overflow: hidden; }
+  .upload-zone.in {
+    background: #fefcea; }
+  .upload-zone.in.hover {
+    background: #fdf2b4; }
+  .upload-zone input {
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    top: -30px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1; }
+  .upload-zone > span {
+    font-size: 1.571em;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center; }
+    @media screen and (max-width: 767px) {
+      .upload-zone > span > span {
+        display: none; } }
+    .upload-zone > span mark {
+      color: #5fccff;
+      background: none;
+      margin: 0 5px;
+      font-weight: 400; }
+
+.upload-stat {
+  text-align: center; }
+  .upload-stat:not(:empty) {
+    margin-top: 0.9375rem; }
+
+.manage-photo-description input[name=photo-desc] {
+  width: 100%; }
+
+.manage-photo-description > div > div:first-child {
+  margin-right: 0.625rem; }

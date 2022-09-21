@@ -1,0 +1,26 @@
+.crossed-categories .text-notice .default {
+  display: inline; }
+
+.crossed-categories .text-notice .exceeded {
+  display: none; }
+
+.crossed-categories.exceeded .crossed-add {
+  display: none; }
+
+.crossed-categories.exceeded .text-notice .default {
+  display: none; }
+
+.crossed-categories.exceeded .text-notice .exceeded {
+  display: inline; }
+
+.crossed-categories .crossed-tree {
+  padding-top: 1.25rem; }
+  .crossed-categories .crossed-tree.empty {
+    display: none; }
+  .crossed-categories .crossed-tree ul {
+    padding-right: 1.25rem;
+    margin-top: 0.3125rem; }
+    .crossed-categories .crossed-tree ul li {
+      list-style: disc !important; }
+      .crossed-categories .crossed-tree ul li:not(:last-child) {
+        margin-bottom: 3px; }

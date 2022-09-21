@@ -1,0 +1,15 @@
+# enable apache morRewrite module #
+RewriteEngine on
+
+RewriteBase /admin/
+
+# Set files headers
+# <FilesMatch "\.(css|js|png|gif|jpg|jpeg)$">
+# Header set Cache-Control "max-age=2678400, public, must-revalidate"
+# </FilesMatch>
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#problem with ajax and json in ie
+AddDefaultCharset UTF-8

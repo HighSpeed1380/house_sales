@@ -1,0 +1,99 @@
+:root {
+  --body-background-color: #192B1B;
+  --body-font-color: #ffffff;
+  
+  --link-color: #5FCCFF;
+  --link-color-hover: white;
+  --alt-box-bg-color: #444444;
+  --content-box-table-cell-border-color: #192A1B;
+  --content-box-table-cell-active-text-color: white;
+  --highlight-border-color: #192A1B;
+
+  --top-navigation-background-color: #00260B;
+  --top-navigation-selector-color: #5FCCFF;
+  --top-navigation-selector-box-shadow-color: #656565;
+  --top-navigation-button-border-color: #61CE70;
+  --top-navigation-menu-border-color: rgba(255,255,255,.2);
+  --top-navigation-menu-color: #5FCCFF;
+  --top-navigation-menu-active-color: #ffffff;
+
+  --header-background-color: #042206;
+  --header-slider-background-color: rgba(0, 38, 11, 0.65);
+  --header-tabs-background-color: #042207;
+  --header-tabs-no-slides-background-color: rgba(255,255,255,.1);
+  --header-tabs-icon-active-filter: brightness(1); 
+  --header-search-form-title-color: #697B6B;
+  --header-banner-color: #465446;
+
+  --btn-color: #042207;
+  --btn-background-color: #61CE70;
+  --btn-background-color-hover: #5fc66d;
+
+  --form-disabled-background-color: #4d4f4d;
+  --form-checked-background-color: #ffffff;
+  --form-checked-background-color-hover: #ffffff;
+  --form-checked-background-color-active: #ffffff;
+  --form-checked-text-color: #111111;
+  --form-background-color: #313F32;
+  --form-field-line-color: #656565;
+  --form-field-line-color-hover: #ffffff;
+  --form-field-line-color-focus: #ffffff;
+  --form-error-background-color: #742327;
+  --form-error-text-color: #d7c0c0;
+  --form-error-shadow: #934044;
+
+  --middle-no-sidebar-background-color: #042207;
+  --bottom-no-sidebar-background-color: #042207;
+
+  --featured-no-sidebar-background-color: #192A1B;
+  --featured-background-color: #042207;
+  --featured-title-color: #ffffff;
+  --featured-accounts-background-color: #192A1B;
+
+  --listing-card-icon-fill-color: #192A1B;
+  --listing-card-icon-color: #61CE70;
+  --listing-card-active-icon-color: #b3b3b3;
+  --listing-card-shadow-color: #051a07;
+
+  --listing-print-icon: url("../img/print-dark.svg");
+  --listing-favorite-icon: url("../img/like-dark.svg");
+  --listing-favorite-icon-active: url("../img/like-dark-active.svg");
+  --listing-compare-icon: url("../img/compare-dark.svg");
+  --listing-compare-icon-active: url("../img/compare-dark-active.svg");
+  --listing-gallery-media-background-color: #192A1B;
+  --listing-mask-background-color: rgba(34, 70, 107, 0.6);
+  --listing-thumbnail-background-color: #223a25;
+
+  --content-background-color: #042207;
+
+  --info-field-color: #697B6B;
+  --empty-category-color: rgba(255,255,255,.3);
+  --empty-category-filter: brightness(.7);
+  --fieldset-header-background-color: #313F32;
+  --icon-filter: brightness(20);
+  --icon-filter-background: brightness(0.4);
+  --icon-filter-img-background: brightness(20);
+  --upload-zone-background-color: #192B1B;
+  --plans-border-color: rgba(255,255,255,.2);
+  --steps-background-color: #042207;
+  --popup-mask-background-color: rgba(255,255,255,.1);
+  --side-block-button-border-color: #61CE70;
+  --table-list-border-color: #192A1B;
+  --table-list-me-border-color: #C3C6CB;
+  --tabs-active-background-color: #000000;
+  --tabs-side-block-active-background-color: #313F32;
+  --tabs-side-block-border-color: #313F32;
+
+  --footer-background-color: #042206;
+  --footer-text-color: #697B6B;
+  --footer-menu-title-color: #DDEEDF;
+  --footer-menu-link-color: #5FCCFF;
+  --footer-menu-link-hover-color: #DDEEDF;
+  --footer-menu-link-active-color: #5FCCFF;
+  --footer-icon: url("../img/footer-icons-dark.svg");
+  --footer-icon-rss: url("../img/footer-icon-rss-dark.svg");
+}
+
+#theme-switcher-moon {
+  display: none;
+}

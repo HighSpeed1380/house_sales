@@ -1,0 +1,86 @@
+/* locationFinder Admin Panel Styles */
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+.lc-interface > div:first-child {
+    float: left;
+    margin-top: -4px;
+    padding-right: 30px;
+}
+.lc-interface > div:last-child {
+    overflow: hidden;
+}
+
+.lc-interface #map {
+    height: 500px;
+    background: #f1f1f1;
+}
+.lc-interface #map > span.hint {
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    padding-top: 160px;
+}
+
+#save_button > input {
+    margin-top: 14px;
+}
+
+.lf-instruction,
+.lf-instruction span.red {
+    font-size: 14px;
+}
+.lf-instruction p.notice {
+    padding: 0 0 15px;
+}
+.lf-instruction ul {
+    padding: 7px 0 20px 17px;
+}
+.lf-instruction ul > li {
+    padding: 0 0 5px;
+    list-style-type: decimal;
+}
+
+/* upload interface */
+.lf-upload-interface .red {
+    font-size: 14px;
+}
+.lf-upload-interface > p {
+    font-size: 14px;
+    line-height: 20px;
+}
+.lf-upload-interface .loading-interface {
+    border-top: 1px #cccccc solid;
+    margin-top: 10px;
+    padding-top: 18px;
+    display: none;
+}
+.lf-upload-interface .progress-bar {
+    max-width: 600px;
+    height: 5px;
+    background: #e2e2e2;
+    margin: 10px 0;
+}
+.lf-upload-interface .progress-bar > div {
+    height: 100%;
+    width: 0;
+    background: #748645;
+    transition: width 0.2s ease;
+}
+.lf-upload-interface .progress-error-message {
+    margin-top: 15px;
+    display: none;
+}
+.lf-upload-interface .progress-error-message > li:not(:first-child) {
+    padding-top: 2px;
+}

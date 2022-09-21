@@ -1,0 +1,14 @@
+.form-buttons {
+  display: block; }
+  .form-buttons.right {
+    text-align: right; }
+  .form-buttons:not(.no-top-padding) {
+    padding-top: 1.875rem; }
+  .form-buttons.form a {
+    display: inline-block;
+    width: 166px;
+    text-align: right; }
+  .form-buttons a:not(.button) {
+    padding-right: 1.875rem; }
+    .form-buttons a:not(.button):before {
+      content: '\2190\00a0'; }

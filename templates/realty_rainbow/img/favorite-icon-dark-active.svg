@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="like">
+    <path d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" id="like" fill="#4A90E2" fill-opacity="1" fill-rule="evenodd" stroke="none" />
+    <path d="M16.7767 8C15.7477 8 14.7731 8.35024 14.0016 8.99298C13.2386 8.35024 12.2624 8 11.2226 8C8.89233 8 7 9.80372 7 12.0342C7 13.1157 7.44022 14.1312 8.24056 14.8924L13.3093 19.7261C13.6897 20.0898 14.3057 20.0928 14.6899 19.7261L19.7579 14.8931C20.5559 14.1334 20.9969 13.1187 21 12.0349C21 9.79547 19.0976 8 16.7767 8" id="heart" fill="#122c47" fill-opacity="1" fill-rule="evenodd" stroke="none" />
+  </g>
+</svg>

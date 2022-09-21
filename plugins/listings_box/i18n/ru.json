@@ -1,0 +1,19 @@
+{
+    "title_listings_box": "Блоки объявлений",
+    "description_listings_box": "Плагин создает блоки для случайных, премиальных, популярных и новых объявлений в интерфейсе сайта",
+    "listings_box_ext_box_type": "Тип блока",
+    "listings_box_number_of_listing": "Количество объявлений",
+    "listings_box_add_new_block": "Добавить блок",
+    "listings_box_block_list": "Все блоки",
+    "listings_box_top_rating": "Высокорейтинговые",
+    "listings_box_popular": "Популярные",
+    "listings_box_recently_added": "Недавно добавленные",
+    "listings_box_random": "Случайные",
+    "listings_box_more_listings": "Число объявлений не должно превышать 30",
+    "listings_box_dublicate": "Исключить дублирование объявлений в других блоках",
+    "listings_box_display_mode": "Вид",
+    "listings_box_default": "Обычный",
+    "listings_box_grid": "Миниатюры",
+    "listings_box_featured": "Премиум объявления",
+    "listings_box_by_category": "Фильтр по категории"
+}

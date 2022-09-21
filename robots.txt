@@ -1,0 +1,14 @@
+# robots.txt
+
+User-Agent: *
+Allow: /
+Crawl-delay: 20
+
+Disallow: /plugins/
+Disallow: /libs/
+Disallow: /includes/
+Disallow: /print*
+Disallow: /*?sort_by=
+Disallow: /*&sort_by=
+Disallow: /*?sort_type=
+Disallow: /*&sort_type=

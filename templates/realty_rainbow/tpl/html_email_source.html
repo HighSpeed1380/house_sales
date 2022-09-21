@@ -1,0 +1,78 @@
+<html style="height: 100%;" >
+	<head>
+		<title></title>
+	</head>
+	<body 
+		style="
+			margin: 0px auto;
+			font-family: Arial;
+			font-size: 13px;
+			color: #444444;
+			background: #f2f2f2;
+            {rtl}">
+		<div class="main" style="
+			width: 100%;
+            max-width: 700px;
+			margin: 10px auto;
+			padding: 5px;
+			background: white;
+			border: 2px #f2f2f2 solid;
+		">
+			<table class="header" 
+			style="
+				border-collapse: collapse;
+				border-spacing: 0;
+				border-padding: 0;
+				border: 0px;
+				width: 100%;
+				background: #f8f8f8;
+				font-size: 17px;
+				text-align: center;
+			">
+			<tr>
+				<td class="logo" 
+				style="
+					border: 0;
+					padding: 0;
+					margin: 0;
+					padding: 10px 20px;
+					max-width: 250px;
+                    width: 40%;">
+					<a title="{site_name}" href="{site_url}">
+						<img src="{tpl_base}img/logo.png" alt="{site_name}"
+                        style="
+                            max-width: 100%;
+                        " />
+					</a>
+				</td>
+				<td class="site-name"
+				style="
+					border: 0;
+					padding: 0;
+					margin: 0;
+					font-size: 16px;
+					text-align: center;
+					">
+					{site_name}
+				</td>
+			</tr>
+			</table>
+			
+			<div class="body" 
+			style="
+				background: white;
+				padding: 25px;
+			">
+				{content}
+			</div>
+			
+			<div class="footer" style="
+				text-align: center;
+				padding: 7px 0 5px;
+				background: #f8f8f8;
+			">
+				{footer}
+			</div>
+		</div>
+	</body>
+</html>

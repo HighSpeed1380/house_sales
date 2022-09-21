@@ -1,0 +1,12 @@
+{
+    "title_socialMetaData": "Социальные метаданные",
+    "description_socialMetaData": "Генерирует социальные мета теги для Twitter, Facebook и других социальных сетей",
+    "config_groups+name+social_meta_data": "Социальные метаданные",
+    "config+name+smd_twitter_name": "Имя пользователя Twitter",
+    "config+name+smd_logo": "Название файла логотипа",
+    "config+des+smd_logo": "Подгрузите файл в директорию плагина (/plugins/socialMetaData/); убедитесь что его разрешение - 600x315 пкс или выше.",
+    "config+name+smd_fb_appid": "Идентификационный номер приложения Facebook",
+    "config+des+smd_fb_appid": "Создать новое приложение Facebook в своей учетной записи и добавить его идентификационный номер. Пройдите по <a target='_blank' href='https://developers.facebook.com/docs/apps/'>ссылке</a> чтобы узнать, как это сделать.",
+    "config+name+smd_fb_admins": "Facebook админ",
+    "config+des+smd_fb_admins": "Введите идентификационный номер учетной записи владельца приложения Facebook. Пройдите по <a target='_blank' href='https://findmyfbid.in/' alt='Найти Facebook ID по URL-адресу'>ссылке</a> для получения идентификационного номера по URL-адресу Facebook."
+}

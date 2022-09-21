@@ -1,0 +1,165 @@
+@import "../../css/sass/variables"
+@import "../../css/sass/mixins"
+@import "../../css/sass/media"
+
+div.plans-container
+    width: 100%
+
+    +respond-to(tablet_and_desktop)
+        &:not(.mCustomScrollbar)
+            border-bottom: $alt-box-bg-border-width $color-alt-box-bg solid
+            padding-bottom: $spacer * 2
+
+ul.plans
+    +flex-box
+    +flex-wrap(nowrap)
+    white-space: nowrap
+    position: relative
+    display: box // ms 10, 11 fallback
+
+    +respond-to(mobile)
+        white-space: normal
+        display: block
+
+        input[type=radio].multiline + label,
+        input[type=checkbox].multiline + label
+            line-height: 22px
+            white-space: normal
+            text-align: $left
+            margin-#{$left}: -11px
+
+        input[type=radio].multiline + label > span,
+        input[type=checkbox].multiline + label > span
+            display: inline-block
+
+    &.more-5
+        li
+            +flex(1, 0, 205px)
+            width: 205px
+
+    &.with-featured,
+    &.with-subscription
+        li div.frame
+            margin-bottom: 138px
+
+    &.with-subscription.with-featured
+        li div.frame
+            margin-bottom: 195px
+
+    > li
+        +flex-box
+        +flex-direction(column)
+        +flex(1, 0, 0)
+        white-space: normal
+        position: relative
+        max-width: 33.33333%
+        display: box // ms 10, 11 fallback
+        box-flex: 1 // ms 10, 11 fallback
+
+        +respond-to(mobile)
+            width: 100% !important
+            max-width: none
+            display: block
+
+        > div.frame
+            +flex-box
+            +flex-direction(column)
+            +flex(1, 0, auto)
+            padding-bottom: $spacer
+            border: $alt-box-bg-border-width / 2 $color-alt-box-bg solid
+            border-top-width: $alt-box-bg-border-width
+            border-bottom-width: $alt-box-bg-border-width
+            position: relative
+            margin-bottom: 80px
+            display: box // ms 10, 11 fallback
+            box-flex: 1 // ms 10, 11 fallback
+
+            +respond-to(mobile)
+                border-width: $alt-box-bg-border-width
+                border-top-width: $alt-box-bg-border-width / 2
+                border-bottom-width: $alt-box-bg-border-width / 2
+                display: block
+                margin-bottom: 0!important
+                padding-bottom: 20px
+
+            &:not(.disabled)
+                cursor: pointer
+
+            > span
+                display: block
+                text-align: center
+
+                &.description
+                    position: absolute
+                    bottom: -9px
+                    left: 50%
+                    z-index: 1
+
+                    +respond-to(tablet_and_desktop)
+                        margin-left: -9px
+
+                    img
+                        margin: 0
+
+                &.name
+                    color: $color-text-dark
+                    font-size: $font-size-8
+                    padding: 10px 0 0 0
+                    height: 70px
+
+                    +respond-to(mobile)
+                        padding: 15px 0 0 0
+
+                &.price
+                    color: $color-text-dark
+                    font-size: $font-size-20
+                    font-weight: normal
+                    padding: 0 0 32px
+
+                    +respond-to(mobile)
+                        padding: 0 0 18px
+
+                &.type
+                    color: $color-text-dark
+                    font-size: $font-size-4
+                    padding: 0 0 10px
+                    font-weight: $weight-regular
+
+                &.count
+                    color: $color-text-dark
+                    font-size: $font-size-2
+                    padding: 0 0 10px
+
+            > div.selector
+                position: absolute
+                top: 100%
+                #{$left}: 0
+                width: 100%
+                text-align: center
+                padding: $gutter 0 0
+
+                > div
+                    margin-top: 10px
+
+            +respond-to(mobile)
+                div.selector,
+                span.description
+                    position: static
+
+                div.selector
+                    padding-top: 20px
+
+                    > div 
+                        padding-top: 5px
+
+        &:first-child > div.frame
+            border-#{left}-width: $alt-box-bg-border-width
+
+            +respond-to(mobile)
+                border-top-width: $alt-box-bg-border-width
+
+        &:last-child > div.frame
+            border-#{$right}-width: $alt-box-bg-border-width
+
+            +respond-to(mobile)
+                border-bottom-width: $alt-box-bg-border-width

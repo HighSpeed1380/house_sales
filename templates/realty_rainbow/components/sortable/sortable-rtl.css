@@ -1,0 +1,10 @@
+.ui-sortable-placeholder {
+  visibility: visible !important;
+  height: auto; }
+  .ui-sortable-placeholder:after {
+    content: '';
+    display: block;
+    width: 100%;
+    opacity: .3;
+    background: #5fccff;
+    padding-bottom: 66%; }

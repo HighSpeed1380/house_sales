@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="listings_box">
+    <title>Listing Boxes</title>
+    <description>The Plugin generates boxes for random, featured, popular and new listings in the front end</description>
+    <author>Dmitry Azavanichus</author>
+    <owner>Flynax Classifieds Software</owner>
+    <version>3.0.6</version>
+    <date>20.02.2012</date>
+    <controller>listings_box</controller>
+    <class>ListingsBox</class>
+    <compatible>4.7.0</compatible>
+
+    <files>
+        <file>rlListingsBox.class.php</file>
+        <file>listings_box.block.tpl</file>
+        <file>listings_box.grid.tpl</file>
+        <file>header.tpl</file>
+        <file>admin/listings_box.tpl</file>
+        <file>admin/listings_box.inc.php</file>
+        <file>i18n/ru.json</file>
+    </files>
+    
+    <install><![CDATA[
+        $GLOBALS['reefless']->loadClass('ListingsBox', null, 'listings_box');
+        $GLOBALS['rlListingsBox']->install();
+    ]]></install>
+    
+    <hooks>
+        <hook version="3.0.1" name="apAjaxRequest"><![CDATA[]]></hook>
+        <hook version="3.0.1" name="tplHeader"><![CDATA[]]></hook>
+        <hook version="3.0.1" name="apPhpBlocksPost"><![CDATA[]]></hook>
+    </hooks>
+    
+    <phrases>
+        <phrase version="3.0.4" key="listings_box_ext_box_type" module="ext"><![CDATA[Box Type]]></phrase>
+        <phrase version="3.0.4" key="listings_box_number_of_listing" module="admin"><![CDATA[Number of listings]]></phrase>
+        <phrase version="3.0.4" key="listings_box_add_new_block" module="admin"><![CDATA[Add a box]]></phrase>
+        <phrase version="3.0.4" key="listings_box_block_list" module="admin"><![CDATA[All Boxes]]></phrase>
+        <phrase version="3.0.4" key="listings_box_top_rating" module="admin"><![CDATA[Top Rated]]></phrase>
+        <phrase version="3.0.4" key="listings_box_popular" module="admin"><![CDATA[Popular]]></phrase>
+        <phrase version="3.0.4" key="listings_box_recently_added" module="admin"><![CDATA[Recently Added]]></phrase>
+        <phrase version="3.0.4" key="listings_box_random" module="admin"><![CDATA[Random]]></phrase>
+        <phrase version="3.0.4" key="listings_box_more_listings" module="admin"><![CDATA[The number of listings should not exceed 30]]></phrase>
+        <phrase version="3.0.4" key="listings_box_dublicate" module="admin"><![CDATA[Prevent duplicate listings in other boxes]]></phrase>
+        <phrase version="3.0.4" key="listings_box_display_mode" module="admin"><![CDATA[Appearance]]></phrase>
+        <phrase version="3.0.4" key="listings_box_default" module="admin"><![CDATA[Default]]></phrase>
+        <phrase version="3.0.4" key="listings_box_grid" module="admin"><![CDATA[Small Thumb Grid]]></phrase>
+        <phrase version="3.0.4" key="listings_box_featured" module="admin"><![CDATA[Featured]]></phrase>
+        <phrase version="3.0.4" key="listings_box_by_category" module="admin"><![CDATA[Filter by category]]></phrase>
+    </phrases>
+    
+    <updates>
+        <update version="2.0.1" files="admin/listings_box.inc.php"><![CDATA[]]></update>
+        <update version="2.0.2" files="rlListingsBox.class.php"><![CDATA[]]></update>
+        <update version="2.1.0" files="rlListingsBox.class.php,listings_box.block.tpl,admin/listings_box.tpl,admin/listings_box.inc.php"><![CDATA[
+            $GLOBALS['rlDb'] -> query( "ALTER TABLE `".RL_DBPREFIX."listing_box` CHANGE `Type` `Type` VARCHAR( 255 ) NOT NULL" );
+            ]]>
+        </update>
+        <update version="2.1.1" files="rlListingsBox.class.php"><![CDATA[]]></update>
+        <update version="2.1.2" files="rlListingsBox.class.php,admin/listings_box.tpl,admin/listings_box.inc.php"><![CDATA[
+            $GLOBALS['rlDb'] -> query( "ALTER TABLE `".RL_DBPREFIX."listing_box` ADD `Unique` ENUM( '1', '0' ) NOT NULL DEFAULT '0'" );
+            ]]>
+        </update>
+        <update version="2.2.0" files="rlListingsBox.class.php,listings_box.block.tpl,admin/listings_box.tpl,admin/listings_box.inc.php,static/list_box.css,static/list_box_rtl.css,static/.htaccess,.htaccess"><![CDATA[
+            $GLOBALS['rlDb'] -> query( "ALTER TABLE `".RL_DBPREFIX."listing_box` ADD `Display_mode` ENUM( 'default', 'grid' ) NOT NULL DEFAULT 'default'" );
+            $GLOBALS['rlDb'] -> query( "ALTER TABLE `".RL_DBPREFIX."listing_box` ADD `Box_columns` INT( 2 ) NOT NULL" );
+            ]]>
+        </update>
+        <update version="2.2.1" files="rlListingsBox.class.php,admin/listings_box.inc.php,listings_box.block.tpl"><![CDATA[         
+            $GLOBALS['rlDb'] -> query( "ALTER TABLE `".RL_DBPREFIX."listing_box` CHANGE `Box_type` `Box_type` ENUM( 'top_rating', 'popular', 'recently_added', 'random', 'featured' ) NOT NULL DEFAULT 'recently_added'" );
+            ]]>
+        </update>   
+        <update version="2.2.2" files="rlListingsBox.class.php,listings_box.block.tpl"><![CDATA[]]></update>        
+        <update version="2.2.3" files="static/list_box.css,listings_box.block.tpl"><![CDATA[]]></update>
+        <update version="2.2.4" files="admin/listings_box.inc.php"><![CDATA[]]></update>
+        <update version="2.2.5" files="admin/listings_box.inc.php,admin/listings_box.tpl,rlListingsBox.class.php,listings_box.block.tpl"><![CDATA[]]></update>
+        <update version="2.2.6" files="listings_box.block.tpl,admin/listings_box.tpl"><![CDATA[]]></update>
+        <update version="2.2.7" files="listings_box.block.tpl"><![CDATA[]]></update>
+        <update version="2.3.0" files="admin/listings_box.inc.php,rlListingsBox.class.php,listings_box.block.tpl"><![CDATA[]]></update>
+        <update version="2.4.0" files="admin/listings_box.inc.php,admin/listings_box.tpl,rlListingsBox.class.php,listings_box.block.tpl,static/list_box.css"><![CDATA[
+            $GLOBALS['rlDb']->query("ALTER TABLE `" . RL_DBPREFIX . "listing_box` ADD `By_category` ENUM('1', '0') NOT NULL DEFAULT '0'");
+        ]]></update>
+        <update version="3.0.0" files="admin/listings_box.tpl,admin/listings_box.inc.php,rlListingsBox.class.php,listings_box.block.tpl,listings_box.grid.tpl,header.tpl"><![CDATA[
+            global $rlDb;
+            if($rlDb->query("SHOW COLUMNS FROM `" . RL_DBPREFIX . "listing_box` LIKE 'Box_columns'")) {
+                $rlDb->query("ALTER TABLE `" . RL_DBPREFIX . "listing_box` DROP `Box_columns`");
+            }            
+            $rlDb->query("DELETE FROM `" . RL_DBPREFIX . "lang_keys` WHERE `Plugin` = 'listings_box' AND `Key` = 'listings_box_more_one_columns'");
+
+            $rlDb->query("UPDATE `" . RL_DBPREFIX . "blocks` SET `Side` = 'top' WHERE `Key` RLIKE 'listing_box_(.*)$' AND `Side` = 'header_banner'");
+
+            $GLOBALS['reefless']->deleteDirectory(RL_PLUGINS . "listings_box" . RL_DS . "static");
+        ]]></update>
+        <update version="3.0.1" files="rlListingsBox.class.php,listings_box.grid.tpl"><![CDATA[]]></update>
+        <update version="3.0.2" files="rlListingsBox.class.php,listings_box.grid.tpl,header.tpl"><![CDATA[]]></update>
+        <update version="3.0.3" files="admin/listings_box.inc.php,admin/listings_box.tpl,rlListingsBox.class.php,listings_box.grid.tpl,listings_box.block.tpl"><![CDATA[]]></update>
+        <update version="3.0.4" files="admin/listings_box.inc.php,admin/listings_box.tpl,header.tpl,rlListingsBox.class.php,i18n/ru.json"><![CDATA[
+            $phrases = array(
+                'listings_box_more_one_columns',
+                'listings_box_ext_number_of_listings',
+            );
+            $GLOBALS['rlDb']->query(
+                "DELETE FROM `{db_prefix}lang_keys`
+                WHERE `Plugin` = 'listings_box' AND `Key` IN ('" . implode("','", $phrases) . "')"
+            );
+        ]]></update>
+        <update version="3.0.5" files="rlListingsBox.class.php,admin/listings_box.tpl"><![CDATA[]]></update>
+        <update version="3.0.6" files="admin/listings_box.inc.php,admin/listings_box.tpl,rlListingsBox.class.php"><![CDATA[]]></update>
+    </updates>
+    
+    <uninstall><![CDATA[
+        $GLOBALS['reefless']->loadClass('ListingsBox', null, 'listings_box');
+        $GLOBALS['rlListingsBox']->uninstall();
+    ]]></uninstall>
+</plugin>

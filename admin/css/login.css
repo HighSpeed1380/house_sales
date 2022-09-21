@@ -1,0 +1,127 @@
+/* login css */
+body, html {
+    height: 100%;
+}
+body {
+    background: #eaeaea;
+    margin: 0;
+    font-family: Arial;
+}
+#height {
+    min-height: 100%;
+}
+#login_block {
+    width: 373px;
+    height: 304px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#login_block .top .left,
+#login_block .top .right,
+#login_block .top .center {
+    background: url('../img/login_pics.gif') 0 0 no-repeat;
+    width: 9px;
+    height: 9px;
+    float: left;
+}
+#login_block .top .right {
+    background-position: 0 -9px;
+}
+#login_block .top .center {
+    background: url('../img/login_pics.gif') 0 -18px repeat-x;
+    width: 355px;
+}
+
+.middle_outer {
+    border-left: 4px #fbfbfb solid;
+    border-right: 4px #fbfbfb solid;
+    background: url('../img/login_pics.gif') 0 -54px repeat-x;
+}
+.middle_inner {
+    border-left: 1px #b4b4b4 solid;
+    border-right: 1px #b4b4b4 solid;
+    background: url('../img/login_bg.gif') left center no-repeat;
+    height: 266px;
+    padding: 20px 0 0 108px;
+}
+
+#login_block .bottom .left,
+#login_block .bottom .right,
+#login_block .bottom .center {
+    background: url('../img/login_pics.gif') 0 -27px no-repeat;
+    width: 9px;
+    height: 9px;
+    float: left;
+}
+#login_block .bottom .right {
+    background-position: 0 -36px;
+}
+#login_block .bottom .center {
+    background: url('../img/login_pics.gif') 0 -45px repeat-x;
+    width: 355px;
+}
+#logo {
+    height: 63px;
+    width: 181px;
+    background: url('../img/login_logo.gif') top left no-repeat;
+    margin-bottom: 10px;
+}
+#login_footer {
+    border-top: 1px #d2d2d2 solid;
+    margin: 0 40px 0;
+    padding: 20px 0;
+    text-align: center;
+    color: #878686;
+    font-size: 11px;
+    height: 14px;
+    margin-top: -55px;
+}
+#crosspiece {
+    height: 55px;
+}
+#login_footer a:link,
+#login_footer a:visited {
+    color: #777777;
+    font-size: 11px;
+    text-decoration: underline;
+}
+#login_footer a:hover,
+#login_footer a:active  {
+    text-decoration: none;
+}
+.red {
+    color: #B63636;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+div.error {
+    margin-bottom: 10px;
+    color: #3d3d3d;
+    font-size: 13px;
+    border: 1px #f18c8c solid;
+    box-shadow: 0px 1px 0px white;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+div.error > div {
+    padding: 10px 30px 12px 40px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    position: relative;
+    background: #f9cece;
+    border-top: 1px #fff7f7 solid;
+}
+div.error div.icon {
+    width: 21px;
+    height: 20px;
+    background: url('../img/side_bar.png') -120px -656px no-repeat;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin: -10px 0 0 10px;
+}
+/* login css end */

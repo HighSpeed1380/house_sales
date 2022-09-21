@@ -1,0 +1,28 @@
+$breakpoint-mobile-small: "screen and (max-width: #{map-get($grid-breakpoints, sm) - 1})"
+$breakpoint-mobile: "screen and (max-width: #{map-get($grid-breakpoints, md) - 1})"
+$breakpoint-tablet: "screen and (max-width: #{map-get($grid-breakpoints, lg) - 1})"
+$breakpoint-tablet-only: "screen and (min-width: #{map-get($grid-breakpoints, md)}) and (max-width: #{map-get($grid-breakpoints, lg) - 1})"
+$breakpoint-tablet-and-mobile: "screen and (min-width: #{map-get($grid-breakpoints, sm)}) and (max-width: #{map-get($grid-breakpoints, lg) - 1})"
+$breakpoint-tablet-and-desktop: "screen and (min-width: #{map-get($grid-breakpoints, md)})"
+$breakpoint-desktop-small: "screen and (max-width: #{map-get($grid-breakpoints, xl) - 1})"
+$breakpoint-desktop-small-only: "screen and (min-width: #{map-get($grid-breakpoints, lg)}) and (max-width: #{map-get($grid-breakpoints, xl) - 1})"
+$breakpoint-desktop-only: "screen and (min-width: #{map-get($grid-breakpoints, lg)})"
+$pixel-ratio: "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)"
+
+$breakpoints: (mobile_xs: $breakpoint-mobile-small, mobile: $breakpoint-mobile, tablet: $breakpoint-tablet, tablet_only: $breakpoint-tablet-only, tablet_and_mobile: $breakpoint-tablet-and-mobile, tablet_and_desktop: $breakpoint-tablet-and-desktop, desktop_sm: $breakpoint-desktop-small, desktop_sm_only: $breakpoint-desktop-small-only, desktop_only: $breakpoint-desktop-only, pixel_ratio: $pixel-ratio)
+
+$mq: "all" !default
+
+=respond-to($screen-size)
+    $mq: map-get($breakpoints, $screen-size)
+
+    @if not $mq
+        @error "No query could be retrieved from #{$screen-size}."
+  
+    @media #{$mq}
+        @content
+
+=gallery-retina
+    @media #{$pixel-ratio}
+        background-image: url(../img/@2x/gallery2.png)
+        background-size: 50px auto

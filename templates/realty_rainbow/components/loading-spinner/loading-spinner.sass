@@ -1,0 +1,56 @@
+@import "../../css/sass/variables"
+@import "../../css/sass/mixins"
+
+.loading-container
+    +flex-box
+    z-index: 100
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    background: rgba($loading-spinner-mask-color, 0)
+    pointer-events: none
+    transition: background 0.4s 0s ease-in
+
+    .loading-spinner
+        opacity: 0
+        transition: opacity 0.4s 0s ease-in
+
+    &.loading-container_show
+        pointer-events: auto
+        background: rgba($loading-spinner-mask-color, $loading-spinner-mask-opacity)
+        transition: background 0.4s 1s ease-out
+
+        .loading-spinner
+            opacity: 1
+            transition: opacity 0.4s 1s ease-out
+
+.loading-spinner
+    width: $loading-spinner-size
+    height: $loading-spinner-size
+    background-color: $color-main
+    display: block
+
+    margin: auto
+    -webkit-animation: rotateplane 1.2s infinite ease-in-out
+    animation: rotateplane 1.2s infinite ease-in-out
+
+@-webkit-keyframes rotateplane
+    0%
+        -webkit-transform: perspective(120px)
+    50%
+        -webkit-transform: perspective(120px) rotateY(180deg)
+    100%
+        -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg)
+
+@keyframes rotateplane
+    0% 
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+    50% 
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+    100% 
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)

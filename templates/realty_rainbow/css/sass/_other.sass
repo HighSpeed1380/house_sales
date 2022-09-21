@@ -1,0 +1,32 @@
+@import "../../css/sass/media"
+
+// Cancel small
+.close.small
+    width: 28px
+    height: 28px
+    position: relative
+    cursor: pointer
+
+    &:before
+        content: ''
+        position: absolute
+        top: 7px
+        left: 7px
+        width: 14px
+        height: 14px
+        background: url('../../img/gallery.png') right -469px no-repeat
+        opacity: .7
+
+    &:hover:before
+        opacity: 1
+
+// Content message
+.text-notice
+    padding-bottom: $spacer * 2
+
+// Content styles
++respond-to(mobile)
+    .content-padding-negative
+        margin-left: -$spacer
+        margin-right: -$spacer
+    

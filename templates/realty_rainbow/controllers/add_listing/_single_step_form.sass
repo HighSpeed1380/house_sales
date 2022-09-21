@@ -1,0 +1,65 @@
+/* Selected category field */
+.content-padding
+    &:not(.selected)
+        .category-selection
+            display: block
+
+        .dynamic-content
+            display: none
+
+    &.selected
+        .category-selection
+            display: none
+
+        .dynamic-content
+            display: block
+
+/* Dynamic content form */
+.dynamic-content
+    &.single-plan
+        .selected-plan
+            display: none
+
+    div.listing-form
+        .form-fields
+            margin: $spacer * 2 0
+
+        .form-media
+            margin-bottom: $spacer * 2
+
+.plans-chart-link
+    margin-#{$left}: $spacer
+
+    +respond-to(mobile)
+        margin: $spacer / 2 0 0 0
+        display: inline-block
+
+.plans-subscribe
+    margin-top: $spacer
+
+    &.disabled
+        display: none
+
+.plans-chart
+    width: 1200px
+    min-height: 300px
+
+.selected-ad-type
+    display: block
+
+    &.disabled
+        display: none
+
+    mark
+        color: inherit
+        background: inherit
+
+.form-crossed
+    &.disabled
+        display: none
+
+    .crossed-categories-container
+        margin-top: 8px
+
+.form-media.disabled
+    display: none

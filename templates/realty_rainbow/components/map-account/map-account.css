@@ -1,0 +1,45 @@
+.map-account__picture {
+  position: relative;
+  width: 100%;
+  padding-bottom: 66%; }
+  .map-account__picture img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: url("../../img/no-account.png") center center no-repeat #F2F2F2; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      .map-account__picture img {
+        background-image: url("../../img/@2x/no-account.png");
+        background-size: 100px auto; } }
+  .map-account__picture:not(.no-picture) img {
+    background: #F2F2F2; }
+
+.map-account__info {
+  padding: 10px; }
+
+.map-account__title {
+  padding-bottom: 5px;
+  font-size: 1.143em !important;
+  font-weight: 400; }
+
+.map-account__fields {
+  word-break: break-word; }
+
+.leaflet-custom-popup_account .leaflet-popup-content {
+  width: 200px;
+  min-height: 200px; }
+
+.leaflet-custom-popup_account .content-placeholder-picture {
+  flex: 0 0 150px; }
+
+.leaflet-custom-popup_account .content-placeholder-info > *:nth-of-type(1) {
+  flex: 0 0 70%; }
+
+.leaflet-custom-popup_account .content-placeholder-info > *:nth-of-type(2) {
+  flex: 0 0 30%;
+  border-bottom-width: 0; }
+
+.leaflet-custom-popup_account .content-placeholder-info > *:nth-of-type(3) {
+  display: none; }

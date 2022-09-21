@@ -1,0 +1,336 @@
+body {
+    font-family: arial;
+    font-size: 13px;
+    margin: 0px;
+    color: #3d3d3d;
+    background: #eaeaea;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-padding: 0;
+    border: 0px;
+    width: 100%;
+}
+table td {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+p {
+    line-height: 18px;
+    margin: 0;
+}
+.clear {
+    clear: both;
+}
+#main_container {
+    width: 800px;
+    height: 100%;
+    margin: 30px auto 0;
+}
+#logo {
+    background: url('img/logo.gif') left center no-repeat;
+    width: 220px;
+    height: 53px;
+    float: left;
+}
+#title {
+    font-size: 24px;
+    float: left;
+    padding: 18px 0 0 25px;
+}
+#nav_bar {
+    float: right;
+    padding: 26px 0 0 30px;
+}
+#nav_bar > a {
+    padding-left: 10px;
+}
+
+.lang-selector {
+    display: inline-block;
+    margin-left: 20px;
+    position: relative;
+    text-transform: uppercase;
+}
+.lang-selector > span {
+    cursor: pointer;
+}
+.lang-selector > span > svg {
+    display: inline-block;
+    width: 8px;
+    height: 5px;
+    vertical-align: middle;
+    transform: translateY(-1px);
+}
+.lang-selector > span > svg path {
+    fill: #444444;
+}
+.lang-selector.active > span > svg {
+    transform: scaleY(-1) translateY(1px);
+}
+.lang-selector:not(.active) > div {
+    display: none;
+}
+.lang-selector > div {
+    position: absolute;
+    top: 20px;
+    left: -12px;
+    background: #d8d8d8;
+    padding: 9px 12px;
+    border-radius: 3px;
+}
+.lang-selector > div > div:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.ver {
+    color: #9a9a9a;
+    font-size: 18px;
+}
+a:link,
+a:visited {
+    color: #2b2b2b;
+    font-size: 12px;
+    text-decoration: underline;
+}
+a:hover,
+a:active  {
+    text-decoration: none;
+}
+a.cancel:link,
+a.cancel:visited {
+    color: #B63636;
+    font-size: 12px;
+    text-decoration: underline;
+    padding: 0 10px 0 0;
+}
+a.cancel:hover,
+a.cancel:active  {
+    text-decoration: none;
+}
+label {
+    font-size: 14px;
+    color: #4e601e;
+}
+
+#body {
+    border-bottom: 1px white solid;
+    margin: 25px 0 50px 0;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+#body > div.inner {
+    background: white;
+    border: 1px #c0c0c0 solid;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+#sidebar {
+    width: 220px;
+    background: url('img/pattern.gif') left center repeat #3b3b3b;
+    vertical-align: top;
+    -moz-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+#sidebar > div.inner {
+    border-top: 1px white solid;
+    -moz-border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    text-align: right;
+}
+#sidebar > div.inner ul {
+    padding: 18px 0 30px 0;
+    margin: 0;
+    width: 192px;
+    float: right;
+}
+#sidebar > div.inner ul li {
+    list-style: none;
+    padding: 0 25px 0 0;
+}
+#sidebar > div.inner ul li.active {
+    background: white;
+    -moz-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    margin: 7px 0;
+}
+#sidebar > div.inner ul li.active a {
+    color: #181818;
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0 10px 0;
+}
+#sidebar > div.inner ul li.done {
+    padding: 4px 25px 6px 0;
+}
+#sidebar > div.inner ul li.done a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+#sidebar > div.inner ul li > div {
+    color: #9c9c9c;
+    font-size: 14px;
+    padding: 4px 0 6px 0;
+}
+#content {
+    vertical-align: top;
+}
+#content > div.inner {
+    padding: 20px 25px;
+}
+#center {
+    position: relative;
+}
+
+#footer {
+    border-top: 1px #d2d2d2 solid;
+    padding: 10px 0 30px;
+    text-align: center;
+    color: #878686;
+    font-size: 11px;
+}
+#footer a {
+    color: #878686;
+    font-size: 11px;
+}
+
+input[type=text],
+input[type=password] {
+    width: 174px;
+    padding: 3px 3px;
+}
+
+input[type=submit],
+input[type=button] {
+    background: url('img/input-bg.gif') left top repeat-x #718342;
+    border: 1px #4d5a2e solid;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 4px 15px 5px;
+    color: #ffffff;
+    font-size: 13px;
+    cursor: pointer;
+}
+input[type=submit]:hover,
+input[type=button]:hover {
+    background-position: 0 -30px;
+}
+input.error {
+    background: #FFF0EF;
+    border: 1px #FF796F solid;
+}
+input.disabled {
+    background: #eaeaea;
+    border: 1px #b1b1b1 solid;
+    color: #444;
+    cursor: default;
+}
+td.table_caption div {
+    background: #eaeaea;
+    padding: 5px 8px 6px 8px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+td.td_spliter div {
+    padding: 5px 8px;
+}
+td.td_value {
+    padding: 5px 8px;
+    width: 72px;
+}
+td.good div {
+    color: #4a970f;
+    font-weight: bold;
+}
+td.average div {
+    color: #fc8c28;
+    font-weight: bold;
+}
+td.bad div {
+    color: #ec1802;
+    font-weight: bold;
+}
+table.list>tbody>tr:hover {
+    background: #f5f5f5;
+}
+.red {
+    color: #ec1802;
+}
+div#error {
+    margin-bottom: 10px;
+    color: #3d3d3d;
+    font-size: 13px;
+    border: 1px #f18c8c solid;
+    box-shadow: 0px 1px 0px white;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+div#error div.inner {
+    background: #f9cece;
+    border-top: 1px #fff7f7 solid;
+    padding: 8px 20px 10px 30px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    position: relative;
+}
+div#error div.inner ul {
+    padding: 0;
+    margin: 0;
+}
+div#error div.inner ul li {
+    list-style: circle;
+    padding: 1px 0;
+}
+div.progress {
+    margin-top: 15px;
+    height: 3px;
+    background: #eeeeee;
+}
+div.progress > div {
+    background: #718342;
+    height: 3px;
+    width: 0%;
+
+    transition: width 0.2s ease;
+}
+div.progress-info {
+    margin-top: 10px;
+}
+div.progress-error-message {
+    margin-top: 25px;
+    color: #d31732;
+}
+iframe {
+    width: 100%;
+    height: 400px;
+    box-sizing: border-box;
+    margin: 10px 0;
+    border: 1px silver solid;
+    position: relative;
+}
+.loading {
+    position: absolute;
+    width: 100%;
+    margin-top: 190px;
+    text-align: center;
+    font-size: 16px;
+}

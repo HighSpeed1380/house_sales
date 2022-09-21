@@ -1,0 +1,55 @@
+<?php
+/**copyright**/
+
+/* define system variables */
+
+define('RL_DS', DIRECTORY_SEPARATOR);
+
+//debug manager, set true to enable, false to disable
+define('RL_DEBUG', false);
+define('RL_DB_DEBUG', false);
+define('RL_MEMORY_DEBUG', false);
+define('RL_AJAX_DEBUG', false);
+
+// mysql credentials
+define('RL_DBPORT', '{db_port}');
+define('RL_DBHOST', '{db_host}');
+define('RL_DBUSER', '{db_user}');
+define('RL_DBPASS', '{db_pass}');
+define('RL_DBNAME', '{db_name}');
+define('RL_DBPREFIX', '{db_prefix}');
+
+// system paths
+define('RL_DIR', {rl_dir});
+define('RL_ROOT', '{rl_root}' . RL_DS . RL_DIR);
+define('RL_INC', RL_ROOT . 'includes' . RL_DS);
+define('RL_CLASSES', RL_INC . 'classes' . RL_DS);
+define('RL_CONTROL', RL_INC . 'controllers' . RL_DS);
+define('RL_LIBS', RL_ROOT . 'libs' . RL_DS);
+define('RL_TMP', RL_ROOT . 'tmp' . RL_DS);
+define('RL_UPLOAD', RL_TMP . 'upload' . RL_DS);
+define('RL_FILES', RL_ROOT . 'files' . RL_DS);
+define('RL_PLUGINS', RL_ROOT . 'plugins' . RL_DS);
+define('RL_CACHE', RL_TMP . 'cache{rl_cache_postfix}' . RL_DS);
+
+// system URLs
+define('RL_URL_HOME', '{rl_url}');
+define('RL_FILES_URL', RL_URL_HOME . 'files/');
+define('RL_LIBS_URL', RL_URL_HOME . 'libs/');
+define('RL_PLUGINS_URL', RL_URL_HOME . 'plugins/');
+
+//system admin paths
+define('ADMIN', '{rl_admin}');
+define('ADMIN_DIR', ADMIN . RL_DS);
+define('RL_ADMIN', RL_ROOT . ADMIN . RL_DS);
+define('RL_ADMIN_CONTROL', RL_ADMIN . 'controllers' . RL_DS);
+
+//memcache server host and port
+define('RL_MEMCACHE_HOST', '127.0.0.1');
+define('RL_MEMCACHE_PORT', 11211);
+
+/* YOU ARE NOT PERMITTED TO MODIFY THE CODE BELOW */
+define('RL_SETUP', 'JGxpY2Vuc2VfZG9tYWluID0gInByb3BlcnR5LmJsdWUiOyRsaWNlbnNlX251bWJlciA9ICJGTDhCMTlSMkcyNEIiOw==');
+/* END CODE */
+
+/* define system variables end */

@@ -1,0 +1,138 @@
+@import url("../../components/popup/popup.css");
+@import url("../../components/plans-chart/plans-chart.css");
+.close.small {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  cursor: pointer; }
+  .close.small:before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 14px;
+    height: 14px;
+    background: url("../../img/gallery.png") right -469px no-repeat;
+    opacity: .7; }
+  .close.small:hover:before {
+    opacity: 1; }
+
+.text-notice {
+  padding-bottom: 1.25rem; }
+
+@media screen and (max-width: 767px) {
+  .content-padding-negative {
+    margin-left: -0.625rem;
+    margin-right: -0.625rem; } }
+
+input[type=button].cancel,
+button.cancel {
+  background: #ababab; }
+  input[type=button].cancel:hover,
+  button.cancel:hover {
+    background: #bcbcbc; }
+
+.icon.delete,
+.icon.cancel,
+.icon.manage,
+.icon.crop,
+.icon.rotate {
+  width: 17px;
+  height: 17px;
+  background: url("../../img/gallery.png") right -489px no-repeat;
+  cursor: pointer;
+  opacity: 0.7;
+  display: inline-block; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    .icon.delete,
+    .icon.cancel,
+    .icon.manage,
+    .icon.crop,
+    .icon.rotate {
+      background: url("../../img/@2x/gallery2.png") right -755px no-repeat;
+      background-size: 40px auto; } }
+
+.icon:hover {
+  opacity: 1; }
+
+.icon.manage {
+  background-position: left -489px; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    .icon.manage {
+      background-position: 0 -755px; } }
+
+.icon.crop {
+  background-position: 0 -513px; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    .icon.crop {
+      background-position: right -776px; } }
+
+svg.icon {
+  background: transparent !important;
+  fill: #565656; }
+
+.my-profile-sidebar {
+  position: relative; }
+  .my-profile-sidebar .image-preview-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block; }
+    .my-profile-sidebar .image-preview-wrapper input[type=file] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      bottom: 0;
+      cursor: pointer;
+      z-index: 1; }
+    .my-profile-sidebar .image-preview-wrapper .image-preview {
+      width: 110px;
+      height: 140px;
+      margin-bottom: 0.3125rem; }
+      .my-profile-sidebar .image-preview-wrapper .image-preview img {
+        width: 100%;
+        height: 100%;
+        background: var(--upload-zone-background-color);
+        object-fit: contain; }
+    .my-profile-sidebar .image-preview-wrapper #navigation {
+      position: relative; }
+      .my-profile-sidebar .image-preview-wrapper #navigation:not(.loaded) .icon {
+        display: none; }
+      .my-profile-sidebar .image-preview-wrapper #navigation.loading:after {
+        content: attr(data-loading);
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: -3px; }
+      .my-profile-sidebar .image-preview-wrapper #navigation.loading > * {
+        visibility: hidden; }
+    .my-profile-sidebar .image-preview-wrapper nav.icons {
+      position: relative;
+      z-index: 2; }
+      .my-profile-sidebar .image-preview-wrapper nav.icons > * {
+        margin-left: 5px; }
+  .my-profile-sidebar .info {
+    margin-top: 1.25rem; }
+    .my-profile-sidebar .info .account-removing {
+      margin-top: 20px; }
+      @media screen and (max-width: 767px) {
+        .my-profile-sidebar .info .account-removing a {
+          width: 100%;
+          text-align: center; } }
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      .my-profile-sidebar .info {
+        margin-top: 0; } }
+
+body[dir="rtl"] .submit-cell .field.phone {
+  direction: ltr;
+  float: right; }
+
+div.account-removing-popup-password div.field.error {
+  padding-top: 10px; }
+
+div.account-removing-popup-password input[name="account-removing-password-input"] {
+  width: 100%;
+  margin-top: 10px; }

@@ -1,0 +1,259 @@
+/* print page css */
+
+body, html {
+	height: 100%;
+	-webkit-print-color-adjust: exact;
+}
+body {
+	margin: 0px auto;
+	font-family: Arial;
+	background: white;
+	font-size: 17px;
+	color: #232323;
+}
+
+h1 {
+	color: #232323;
+	font-size: 1.412em;
+	margin: 0;
+	padding: 0 0 20px 0;
+	font-weight: normal;
+}
+h2 {
+	padding: 8px 0;
+    background: #e8e8e8;
+    font-size: 1.059em;
+    margin: 0 0 15px;
+    text-align: center;
+    font-weight: normal;
+}
+
+div.container {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 20px 0;
+	overflow: hidden;
+}
+
+.clearfix:before,
+.clearfix:after,
+.table-cell:before,
+.table-cell:after {
+	display: table;
+	content: " ";
+}
+.clearfix:after,
+.table-cell:after {
+	clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.two-inline > *:first-child {
+	float: right;
+}
+.two-inline > *:last-child {
+	overflow: hidden;
+}
+.two-inline.left > *:first-child {
+	float: left;
+}
+
+.print-button {
+	text-align: center;
+	padding: 20px 0;
+}
+
+/*** LISTING DETAILS ***/
+.two-inline .price-tag {
+    font-size: 1.412em;
+    margin-left: 30px;
+}
+/* picture gallery */
+div.pic-gallery {
+	margin: 0 0 30px;
+}
+div.pic-gallery > img {
+	width: 100%;
+}
+
+/* details */
+.listing > div > div.table-cell + summary {
+	margin-top: 20px;
+}
+.details {
+	margin: 0 -15px;
+}
+.details > div {
+	padding: 0 15px;
+	width: 50%;
+	float: left;
+}
+.group-name {
+	padding: 0 0 5px;
+	font-size: 1.118em;
+}
+.group-name + section {
+	padding: 0 0 20px;
+}
+.table-cell > div.name {
+	padding: 4px 10px 4px 0;
+    color: #999999;
+    width: 145px;
+    font-style: italic;
+    float: left;
+    word-break: break-word;
+}
+.table-cell > div.name > div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.table-cell.wide-field > div.name {
+    width: 100%;
+    float: none;
+}
+.table-cell > div.name span:after {
+	content: ':';
+}
+.table-cell > div.value {
+	padding: 4px 0;
+    overflow: hidden;
+}
+ul.checkboxes {
+	padding: 0;
+	margin: 0 -15px;
+}
+ul.checkboxes > li {
+	padding: 0 15px 5px;
+	float: left;
+	width: 50%;
+	list-style: none;
+}
+ul.checkboxes > li:not(.active) {
+	color: #999999;
+	text-decoration: line-through;
+}
+ul.checkboxes > li:not(.active) > img {
+	visibility: hidden;
+}
+ul.checkboxes > li > img {
+	background: #555;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin: 7px 10px 0 0;
+    vertical-align: top;
+}
+
+/* owner details */
+.owner div.profile {
+    margin-bottom: 20px;
+}
+.owner div.profile div.picture img {
+    background-size: cover;
+}
+.owner div.summary {
+	padding-right: 20px;
+}
+.owner div.summary > .type {
+	color: #8e8e8e;
+    font-size: 0.882em;
+    font-style: italic;
+}
+.owner div.summary > .about {
+	padding: 10px 0 0;
+	font-size: 0.882em;
+}
+
+/* details */
+body[dir=rtl] > div.header div.site-name {
+	text-align: left;
+}
+body[dir=rtl] .details > div {
+	float: right;
+}
+body[dir=rtl] .table-cell > div.name {
+	padding: 4px 0 4px 10px;
+    float: right;
+}
+body[dir=rtl] .table-cell.wide-field > div.name {
+	float: none;
+}
+body[dir=rtl] ul.checkboxes > li {
+	float: right;
+}
+body[dir=rtl] ul.checkboxes > li > img {
+    margin: 7px 0 0 10px;
+}
+
+/* owner details */
+body[dir=rtl] .owner div.summary {
+	padding-right: 0;
+	padding-left: 20px;
+}
+/*** LISTING DETAILS END ***/
+
+/* header */
+body > div.header {
+	background: #a3a3a3;
+}
+body > div.header > div {
+	width: 960px;
+	margin: auto;
+	padding: 20px 0;
+}
+body > div.header div.site-name {
+	font-size: 1.176em;
+	text-align: right;
+	padding: 10px 0 0 0;
+}
+
+/* footer */
+div.footer {
+	margin-top: 30px;
+	padding-top: 20px;
+	border-top: 2px #cccccc solid;
+	text-align: center;
+}
+
+@media print {
+	body > div.header > div {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+/* RTL mode */
+body[dir=rtl] {
+	direction: rtl;
+}
+
+body[dir=rtl] .two-inline > *:first-child {
+	float: left;
+}
+body[dir=rtl] .two-inline.left > *:first-child {
+	float: right;
+}
+body[dir=rtl] > div.header div.site-name {
+	text-align: left;
+}
+body[dir=rtl] .two-inline .price-tag {
+    margin-left: 0;
+    margin-right: 30px;
+}
+
+/* print page css end */

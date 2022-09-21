@@ -1,0 +1,73 @@
+@import "../../css/sass/variables"
+@import "../../css/sass/mixins"
+
+.marker-label
+    white-space: nowrap
+    display: flex
+    justify-content: center
+    height: auto !important
+
+    &_hover
+        > span
+            background: $marker-label-bg-color-active !important
+
+            &:before
+                border-color: $marker-label-bg-color-active transparent transparent transparent !important
+
+    > span
+        background: $marker-label-bg-color
+        color: $marker-label-color
+        font-size: 13px
+        text-align: center
+        padding: 3px 6px
+        white-space: nowrap
+        font-weight: 400
+        border-radius: 3px
+        transform: translateY(-24px)
+
+        &:before
+            content: ''
+            left: 50%
+            margin-left: -5px
+            bottom: -5px
+            position: absolute
+            width: 0
+            height: 0
+            border-style: solid
+            border-width: 6px 6.5px 0 6.5px
+            border-color: $marker-label-bg-color transparent transparent transparent
+
+.leaflet-custom-popup_label-style
+    bottom: -9px !important
+
+    .leaflet-popup-tip
+        display: none
+
+    .leaflet-popup-content-wrapper
+        box-shadow: none
+        border: 2px $marker-label-bg-color solid
+
+    .leaflet-popup-close-button
+        background: $marker-label-bg-color !important
+        width: 18px
+        height: 18px !important
+        padding: 0 ! important
+        display: block
+        margin: 2px
+        text-indent: -50px
+        overflow: hidden
+
+        &:after,
+        &:before
+            content: ''
+            position: absolute
+            height: 2px
+            width: 12px
+            background: white
+            top: 7px
+            #{$left}: 4px
+            transform: rotate(45deg)
+            border-radius: 3px
+
+        &:before
+            transform: rotate(135deg)

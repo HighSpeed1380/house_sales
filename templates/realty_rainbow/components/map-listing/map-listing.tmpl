@@ -1,0 +1,22 @@
+<div class="map-listing d-flex flex-column flex-fill">
+    <div class="map-listing__picture d-flex[%if !hasImg || !img %] no-picture[%/if%]">
+        <a href="[%:url%]" target="_blank">
+            <img src="[%if img%][%:img%][%else%]data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=[%/if%]"
+                 [%if img_x2 %]
+                 srcset="[%:img_x2%] 2x"
+                 [%/if%]
+                 alt="[%:title%]" />
+            [%:tmplMapListingHookData%]
+        </a>
+    </div>
+    <div class="map-listing__info d-flex flex-column flex-fill">
+        <div class="d-flex">
+            <a href="[%:url%]" target="_blank" class="map-listing__title flex-fill">[%:title%]</a>
+            <span class="favorite align-self-center" title="{$lang.add_to_favorites}" id="fav_[%:ID%]">
+                <span class="icon"></span>
+            </span>
+        </div>
+        <div class="map-listing__price">[%:price%]</div>
+        <div class="map-listing__fields">[%:info%]</div>
+    </div>
+</div>

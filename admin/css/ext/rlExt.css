@@ -1,0 +1,122 @@
+/* custom */
+.x-grid3-col-rlExt_item,
+.x-grid3-col-rlExt_item_bold
+{
+    color: #596c27;
+}
+
+.x-grid3-col-rlExt_item > span,
+.x-grid3-col-rlExt_item_bold > span {
+    color: #333333;
+}
+
+.x-grid3-col-rlExt_black_bold,
+.x-grid3-col-rlExt_item_bold {
+    font-weight: bold;
+}
+
+.rlExt_active
+{
+    color: #43af01;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 11px;
+}
+.rlExt_approval
+{
+    color: #00b0d0;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 11px;
+}
+.rlExt_not_installed
+{
+    color: #c83434;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.x-panel-bwrap {
+    overflow: visible;
+}
+.x-grid-panel .x-panel-body {
+    overflow: visible !important;
+}
+.x-grid3 {
+    overflow: visible;
+}
+.x-grid3-viewport {
+    overflow: visible;
+}
+
+/* to prevent column header from overflowing grid panel to the right */
+.x-grid3-header-offset { 
+    width:auto !important;
+}
+
+/* fix for z-index quirk in IE */
+.x-grid-panel .x-panel-mc .x-panel-body {
+    z-index: 1;
+}
+table.x-grid3-row-table td.no_margin
+{
+    padding: 1px 0;
+}
+div.flExtModal
+{
+    position: absolute;
+    display: none;
+}
+div.flExtModal div
+{
+    border: 1px #7D7D7D solid;
+    background: url("../../img/ext/default/menu/menu.gif") #F0F0F0;
+    padding: 3px 2px;
+}
+div.flExtModal div ul
+{
+    padding: 0;
+}
+div.flExtModal ul li
+{
+    background: url("../../img/form.png") 0 -1377px no-repeat;
+    list-style: none;
+    white-space: nowrap;
+    font-size: 11px;
+    border: 1px #F0F0F0 solid;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 0 0 1px 0;
+}
+div.flExtModal ul li:hover
+{
+    border: 1px #acacac solid;
+    background-color: #dbdbdb;
+}
+div.flExtModal ul li a
+{
+    display: block;
+    padding: 3px 6px 3px 30px;
+    color: #333333;
+    text-decoration: none;
+}
+ul.ext_listing_info_list
+{
+    padding: 0;
+    margin: 0;
+}
+ul.ext_listing_info_list li
+{
+    padding: 0 0 3px 0;
+    list-style: none;
+    margin: 0;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) { 
+    .x-grid3-cell, /* Normal grid cell */
+    .x-grid3-gcell { /* Grouped grid cell (esp. in head)*/
+        box-sizing: border-box;
+    }
+}

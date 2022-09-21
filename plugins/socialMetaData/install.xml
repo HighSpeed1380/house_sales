@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="socialMetaData">
+    <title>Social Meta Data</title>
+    <description>Generates social meta tags for Twitter, Facebook and other social networks</description>
+    <author>Curtis Jackson</author>
+    <owner>Flynax Classifieds Software</owner>
+    <version>1.2.6</version>
+    <date>12.08.2014</date>
+    <class>SocialMetaData</class>
+    <compatible>4.6.0</compatible>
+
+    <files>
+        <file>rlSocialMetaData.class.php</file>
+        <file>social_meta_data.tpl</file>
+        <file>i18n/ru.json</file>
+    </files>
+
+    <hooks>
+        <hook version="1.2.0" name="boot"><![CDATA[]]></hook>
+        <hook version="1.2.0" name="tplHeaderCommon"><![CDATA[]]></hook>
+    </hooks>
+
+    <configs key="social_meta_data" name="Social Meta Data" version="1.2.6"><![CDATA[]]>
+        <config key="smd_twitter_name" name="Twitter username" type="text" version="1.2.6"><![CDATA[]]></config>
+        <config key="smd_logo" name="Logo file name" type="text" version="1.2.6" description="Upload the file to the plugin directory (/plugins/socialMetaData/), and make sure its resolution is 600x315 px or higher."><![CDATA[]]></config>
+        <config key="smd_fb_appid" name="Facebook App ID" type="text" version="1.2.6" description="Create a new Facebook App from your account and add its ID. Click &lt;a target='_blank' href='https://developers.facebook.com/docs/apps/'&gt;here&lt;/a&gt; to learn how to do it."><![CDATA[]]></config>
+        <config key="smd_fb_admins" name="Facebook Admin" type="text" version="1.2.6" description="Enter the account ID of the Facebook App owner. Click &lt;a target='_blank' href='https://findmyfbid.in/' alt='Find Facebook ID by URL'&gt;here&lt;/a&gt; to get the ID by the Facebook URL."><![CDATA[]]></config>
+    </configs>
+
+    <updates>
+        <update version="1.0.1" files="social_meta_data.tpl"><![CDATA[]]></update>
+        <update version="1.0.2" files="boot.php,social_meta_data.tpl"><![CDATA[]]></update>
+        <update version="1.1.0" files="rlSocialMetaData.class.php,social_meta_data.tpl"><![CDATA[
+            unlink(RL_PLUGINS . 'socialMetaData/boot.php');
+        ]]></update>
+        <update version="1.1.1" files="social_meta_data.tpl"><![CDATA[]]></update>
+        <update version="1.1.2" files="rlSocialMetaData.class.php"><![CDATA[]]></update>
+        <update version="1.2.0" files="rlSocialMetaData.class.php,social_meta_data.tpl"><![CDATA[]]></update>
+        <update version="1.2.1" files="rlSocialMetaData.class.php,social_meta_data.tpl"><![CDATA[]]></update>
+        <update version="1.2.2" files="rlSocialMetaData.class.php,social_meta_data.tpl"><![CDATA[]]></update>
+        <update version="1.2.3" files="rlSocialMetaData.class.php"><![CDATA[]]></update>
+        <update version="1.2.4" files="social_meta_data.tpl"><![CDATA[]]></update>
+        <update version="1.2.5" files="social_meta_data.tpl,rlSocialMetaData.class.php"><![CDATA[]]></update>
+        <update version="1.2.6" files="rlSocialMetaData.class.php,i18n/ru.json"><![CDATA[]]></update>
+    </updates>
+</plugin>

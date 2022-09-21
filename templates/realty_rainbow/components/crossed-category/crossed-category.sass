@@ -1,0 +1,34 @@
+@import "../../css/sass/variables"
+
+.crossed-categories
+    .text-notice
+        .default
+            display: inline
+        .exceeded
+            display: none
+
+    &.exceeded
+        .crossed-add
+            display: none
+
+        .text-notice
+            .default
+                display: none
+            .exceeded
+                display: inline
+
+    .crossed-tree
+        padding-top: $spacer * 2
+
+        &.empty
+            display: none
+
+        ul
+            padding-#{$left}: $spacer * 2
+            margin-top: $spacer / 2
+
+            li
+                list-style: disc !important
+
+                &:not(:last-child)
+                    margin-bottom: 3px

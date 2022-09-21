@@ -1,0 +1,40 @@
+div.auth {
+  background: #EDF3FB;
+  padding: 1.25rem;
+  max-width: 700px;
+  margin-top: 0.625rem; }
+  @media screen and (max-width: 767px) {
+    div.auth {
+      padding: 10px; } }
+  div.auth > div {
+    display: inline-block;
+    vertical-align: top; }
+    @media screen and (max-width: 767px) {
+      div.auth > div {
+        display: block;
+        width: 100%;
+        text-align: "right"; } }
+  div.auth > div.cell {
+    text-align: center;
+    width: 43%; }
+    div.auth > div.cell > div {
+      text-align: "right";
+      margin: 0 auto;
+      display: inline-block; }
+  div.auth > div.divider {
+    width: 14%;
+    font-size: 1.143em;
+    padding-top: 95px;
+    text-align: center; }
+    @media screen and (max-width: 767px) {
+      div.auth > div.divider {
+        padding-top: 0;
+        padding: 1.25rem 0;
+        width: 100%; } }
+  div.auth div.caption {
+    font-weight: 600;
+    color: #2b2b2b; }
+  div.auth div.name {
+    padding: 15px 0 5px; }
+  div.auth div.agreement-fields {
+    padding-top: 5px; }

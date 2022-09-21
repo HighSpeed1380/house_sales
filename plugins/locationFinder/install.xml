@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="locationFinder">
+    <title>Location Finder</title>
+    <description>Identifies location of users and allows them to show accurate addresses on the map</description>
+    <author>John Freeman</author>
+    <owner>Flynax Classifieds Software</owner>
+    <version>5.0.2</version>
+    <date>06.03.2012</date>
+    <class>LocationFinder</class>
+    <compatible>4.8.0</compatible>
+    <controller version="3.1.0">locationFinder</controller>
+
+    <files>
+        <file>map.tpl</file>
+        <file>rlLocationFinder.class.php</file>
+        <file>rlLocationFinderAP.class.php</file>
+        <file>static/lib.js</file>
+        <file>static/apStyle.css</file>
+        <file>admin/row.tpl</file>
+        <file>admin/map.tpl</file>
+        <file>admin/js.tpl</file>
+        <file>admin/locationFinder.inc.php</file>
+        <file>admin/locationFinder.tpl</file>
+        <file>i18n/ru.json</file>
+    </files>
+
+    <install><![CDATA[
+        $GLOBALS['reefless']->loadClass('LocationFinder', false, 'locationFinder');
+        $GLOBALS['rlLocationFinder']->install();
+    ]]></install>
+
+    <hooks>
+        <hook version="4.0.0" name="addListingPreFields"><![CDATA[]]></hook>
+        <hook version="4.0.0" name="editListingPreFields"><![CDATA[]]></hook>
+        <hook version="4.0.0" name="afterListingEdit"><![CDATA[]]></hook>
+        <hook version="4.0.0" name="afterListingCreate"><![CDATA[]]></hook>
+        <hook version="5.0.0" name="afterListingUpdate"><![CDATA[]]></hook>
+        <hook version="4.0.0" name="addListingPostSimulation"><![CDATA[]]></hook>
+        <hook version="4.0.0" name="editListingPostSimulation"><![CDATA[]]></hook>
+        <hook version="4.0.0" name="listingDetailsBottom"><![CDATA[]]></hook>
+        <hook version="4.0.0" name="ajaxRequest"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apPhpListingsView"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apTplListingsFormEdit"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apTplListingsFormAdd"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apPhpListingsPost"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apPhpListingsAfterEdit"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apPhpListingsAfterAdd"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apMixConfigItem"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apTplContentBottom"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apTplHeader"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apAjaxRequest"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apTplListingTypesForm"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apPhpListingTypesPost"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apPhpListingTypesBeforeAdd"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apPhpListingTypesBeforeEdit"><![CDATA[]]></hook>
+        <hook version="4.0.0" class="LocationFinderAP" name="apPhpConfigBeforeUpdate"><![CDATA[]]></hook>
+        <hook version="5.0.0" class="LocationFinderAP" name="apPhpConfigBottom"><![CDATA[]]></hook>
+    </hooks>
+
+    <configs key="locationFinder" name="Location Finder">
+        <![CDATA[]]>
+        <config version="2.0.2" key="locationFinder_search_divider" name="Search settings" type="divider"><![CDATA[]]></config>
+        <config version="2.0.2" key="locationFinder_search" name="Default location" type="text"><![CDATA[San Francisco, CA, USA]]></config>
+        <config version="2.0.2" key="locationFinder_use_location" name="Use visitor location" type="bool" description="Disable this option to use default location. If Enabled the ssl protection for Add Listing page might be required."><![CDATA[1]]></config>
+        <config version="2.0.2" key="locationFinder_map_divider" name="Map settings" type="divider"><![CDATA[]]></config>
+        <config version="4.0.0" key="locationFinder_map_zoom" name="Default map zoom" type="select"><![CDATA[13]]></config>
+        <config version="3.0.0" key="locationFinder_position" name="Map position" type="select"><![CDATA[top]]></config>
+        <config version="3.0.0" key="locationFinder_group" name="Place map in group" type="select"><![CDATA[]]></config>
+        <config version="3.0.0" key="locationFinder_type" name="Position in group" type="radio"><![CDATA[prepend]]></config>
+        <config version="3.0.0" key="locationFinder_mapping_divider" name="Geo mapping" type="divider"><![CDATA[]]></config>
+        <config version="5.0.0" key="locationFinder_mapping" name="Use location mapping" description="Synchronizes map location with values of location-related fields. IMPORTANT: Synchronization of the maps with locations (offered by Multifield location database) is available with Google geocoding only." type="bool"><![CDATA[1]]></config>
+        <config version="4.0.0" key="locationFinder_use_neighborhood" name="Split into neighborhoods" description="Split metropolises into neighborhoods and smaller areas, if possible." type="bool"><![CDATA[1]]></config>
+        <config version="3.0.0" key="locationFinder_mapping_country" name="Country field" type="select"><![CDATA[country]]></config>
+        <config version="3.0.0" key="locationFinder_mapping_state" name="State field" type="select"><![CDATA[country_level1]]></config>
+        <config version="3.0.0" key="locationFinder_mapping_city" name="City field" type="select"><![CDATA[country_level2]]></config>
+    </configs>
+
+    <phrases>
+        <phrase key="locationFinder_fieldset_caption" module="common"><![CDATA[Location on map]]></phrase>
+        <phrase key="locationFinder_location" module="common"><![CDATA[Location]]></phrase>
+        <phrase version="2.0.2" key="locationFinder_drag_notice" module="common"><![CDATA[Drag and drop the marker or double click on the map to move the marker to the desired location.]]></phrase>
+        <phrase key="locationFinder_hint" module="common"><![CDATA[If you want to show more accurate coordinates on the map you can enter Country, State/Region, City and Address separated by commas, do a search and then drag the marker to the correct location on the map afterwards.]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_form_top" module="admin"><![CDATA[Top of form]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_form_bottom" module="admin"><![CDATA[Bottom of form]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_place_in_form" module="admin"><![CDATA[Place in fields group]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_prepend" module="admin"><![CDATA[Above all fields]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_append" module="admin"><![CDATA[Below all fields]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_address_hint" module="common"><![CDATA[Search Address]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_mapping_manager" module="admin"><![CDATA[Location Mapping Manager]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_mapping_no_fields_mapping" module="admin"><![CDATA[No location-related fields have been found, please set the fields mapping [here].]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_mapping_mf_inactive_error" module="admin"><![CDATA[The "Multifield/Location Filter" plugin should be installed and activated, go to [Plugin Manager] and install/activate the Plugin.]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_mapping_table_error" module="admin"><![CDATA[No mapping table has been found in the database, click [here] to create the required table.]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_js_location_not_selected_error" module="ext"><![CDATA[Please select a location from the dropdown first]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_default_map_hint" module="admin"><![CDATA[Please select a location from the dropdown to change it's mapping]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_mapping_saved" module="ext"><![CDATA[Location mapping data were successfully updated]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_update_database" module="admin"><![CDATA[Update Database]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_import_update_database" module="admin"><![CDATA[Import/Update Database]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_incompatible_database_error" module="admin"><![CDATA[The location database you use is incompatible with the latest geo mapping database we offer.]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_database_structure_created" module="admin"><![CDATA[A missing table in the database has been successfully created.]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_remote_update_status" module="admin"><![CDATA[{percent}% completed...]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_remote_install_text" module="admin"><![CDATA[Update files will be downloaded from the Flynax Server and imported to your site local database.<br />Updating may take a few minutes; click the <b>Install</b> button and stay on the page until the process is over.]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_remote_update_text" module="admin"><![CDATA[You may check for an update of the Geo Mapping database by clicking the <b>Update</b> button; the process may take a few minutes. Please stay on the page until importing is over.]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_remote_update_notice" module="admin"><![CDATA[Do not update the database if you modified mapping in the previous step; all current mapping data will be lost during the import.]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_preparing" module="admin"><![CDATA[Preparing for upload]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_file_download_info" module="ext"><![CDATA[Downloading {file} of {files} files]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_file_upload_info" module="ext"><![CDATA[Uploading {file} of {files} files]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_import_completed" module="ext"><![CDATA[Importing has been successfully completed]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_db_uptodate" module="ext"><![CDATA[Your database version is up to date]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_option_name" module="admin"><![CDATA[Location Finder]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_mapping_table_mismatch" module="admin"><![CDATA[The current database version is out of date and needs to be updated to 2.0.<br />Click "Import" to download a new database (a global location database), or "Update Structure" of the database if you use your own locations.]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_update_structure" module="admin"><![CDATA[Update Structure]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_database_structure_updated" module="admin"><![CDATA[The database table structure has been successfully updated.]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_no_geocoder_location" module="admin"><![CDATA[Unable to find the location. Please try looking for "{location}" in the search field on the map.]]></phrase>
+        <phrase version="5.0.1" key="locationFinder_geocoding_mismatch" module="admin"><![CDATA[Location synchronization is available If Google is selected as the geocoding provider.]]></phrase>
+    </phrases>
+
+    <updates>
+        <update version="2.0.1"><![CDATA[]]></update>
+        <update version="2.0.2" files="map.tpl,static/lib.js"><![CDATA[]]></update>
+        <update version="2.1.0" files="map.tpl,map_43.tpl,static/lib.js"><![CDATA[]]></update>
+        <update version="3.0.0" files="rlLocationFinder.class.php,map.tpl,map_43.tpl,static/lib.js,static/style_43.css,static/style.css,admin/map.tpl,admin/js.tpl"><![CDATA[
+            global $rlDb, $config;
+
+            $group_id = $rlDb->getOne('ID', "`Key` = 'locationFinder'", 'config_groups');
+            $rlDb->query("UPDATE `".RL_DBPREFIX."config` SET `Position` = '6', `Group_ID` = '{$group_id}', `Type` = 'select' WHERE `Key` = 'locationFinder_position' LIMIT 1");
+            $rlDb->query("UPDATE `".RL_DBPREFIX."config` SET `Position` = '6', `Group_ID` = '{$group_id}', `Type` = 'radio' WHERE `Key` = 'locationFinder_type' LIMIT 1");
+            $rlDb->query("UPDATE `".RL_DBPREFIX."config` SET `Position` = '6', `Group_ID` = '{$group_id}' WHERE `Key` = 'locationFinder_group' LIMIT 1");
+
+            if (!in_array($config['locationFinder_position'], array('top', 'bottom'))) {
+                $rlDb->query("UPDATE `".RL_DBPREFIX."config` SET `Default` = 'in_group' WHERE `Key` = 'locationFinder_position' LIMIT 1");
+                $rlDb->query("UPDATE `".RL_DBPREFIX."config` SET `Default` = '{$config['locationFinder_position']}' WHERE `Key` = 'locationFinder_group' LIMIT 1");
+            }
+
+            $rlDb->query("UPDATE `".RL_DBPREFIX."plugins` SET `Controller` =  '' WHERE `Key` = 'locationFinder' LIMIT 1");
+        ]]></update>
+        <update version="3.1.0" files="map.tpl,map_43.tpl,rlLocationFinderAP.class.php,rlLocationFinder.class.php,admin/row.tpl,admin/map.tpl,admin/locationFinder.inc.php,admin/locationFinder.tpl,static/lib.js,static/apStyle.css"><![CDATA[
+            global $config, $rlConfig, $rlDb;
+
+            if (isset($config['mf_geo_mapping'])) {
+                $rlConfig->setConfig('locationFinder_mapping', $config['mf_geo_mapping']);
+                $rlDb->query("DELETE FROM `".RL_DBPREFIX."config` WHERE `Key` = 'mf_geo_mapping' LIMIT 1");
+            }
+
+            $sql  = "INSERT INTO `" . RL_DBPREFIX . "config` (`Group_ID`, `Key`, `Default`, `Plugin`) VALUES ";
+            $sql .= "(0, 'locationFinder_db_version', '', 'locationFinder')";
+            $rlDb->query($sql);
+
+            global $rlDb;
+
+            $sql = "ALTER TABLE `".RL_DBPREFIX."listing_types` ADD `Location_finder` ENUM('0', '1') NOT NULL DEFAULT '1' AFTER `Status`";
+            $rlDb -> query($sql);
+
+            if ($rlDb->getRow("SHOW TABLES LIKE '" . RL_DBPREFIX . "geo_mapping'")) {
+                $table_fields = $rlDb->getAll("SHOW COLUMNS FROM `" . RL_DBPREFIX . "geo_mapping`", 'Field');
+
+                if (!$table_fields['Neighborhood']) {
+                    $rlDb->query("ALTER TABLE `" . RL_DBPREFIX . "geo_mapping` ADD `Neighborhood` ENUM('0','1') NOT NULL DEFAULT '0'");
+                }
+                if (!$table_fields['Target']) {
+                    $rlDb->query("ALTER TABLE `" . RL_DBPREFIX . "geo_mapping` ADD `Target` ENUM('region','city') NOT NULL DEFAULT 'city'");
+                }
+                if (!$table_fields['Lat']) {
+                    $rlDb->query("ALTER TABLE `" . RL_DBPREFIX . "geo_mapping` ADD `Lat` double NOT NULL");
+                }
+                if (!$table_fields['Lng']) {
+                    $rlDb->query("ALTER TABLE `" . RL_DBPREFIX . "geo_mapping` ADD `Lng` double NOT NULL");
+                }
+                if (!$table_fields['Verified']) {
+                    $rlDb->query("ALTER TABLE `" . RL_DBPREFIX . "geo_mapping` ADD `Verified` ENUM('0','1') NOT NULL DEFAULT '1'");
+                }
+            }
+        ]]></update>
+        <update version="3.1.1" files="rlLocationFinderAP.class.php"><![CDATA[]]></update>
+        <update version="3.1.2" files="rlLocationFinder.class.php"><![CDATA[]]></update>
+        <update version="3.1.3" files="rlLocationFinder.class.php,admin/locationFinder.tpl,admin/map.tpl,static/lib.js"><![CDATA[]]></update>
+        <update version="3.1.4" files="rlLocationFinder.class.php"><![CDATA[]]></update>
+        <update version="3.1.5" files="static/lib.js"><![CDATA[]]></update>
+        <update version="4.0.0" files="admin/js.tpl,admin/locationFinder.inc.php,admin/locationFinder.tpl,admin/map.tpl,static/lib.js,map.tpl,rlLocationFinder.class.php,rlLocationFinderAP.class.php"><![CDATA[
+            global $rlDb;
+
+            // Remove hooks
+            $hooks_to_be_removed = array(
+                'seoBase',
+                'tplFooter',
+                'boot',
+                'multifieldBuild'
+            );
+            $rlDb->query("
+                DELETE FROM `{db_prefix}hooks` 
+                WHERE `Plugin` = 'locationFinder' 
+                AND `Name` IN ('" . implode("','", $hooks_to_be_removed) . "')
+            ");
+
+            // Add hidden config
+            $sql = "
+                INSERT INTO `{db_prefix}config` (`Group_ID`, `Key`, `Default`, `Type`, `Plugin`)
+                VALUES (0, 'locationFinder_default_location', '37.7577627,-122.4726194', 'text', 'locationFinder')
+            ";
+            $rlDb->query($sql);
+
+            // Remove legacy files
+            $files_to_be_removed = array(
+                'map_43.tpl',
+                'details.tpl',
+                'static/style_43.css',
+                'static/style.css',
+            );
+            foreach ($files_to_be_removed as $file) {
+                unlink(RL_PLUGINS . 'locationFinder/' . $file);
+            }
+        ]]></update>
+        <update version="4.0.1" files="admin/map.tpl,static/lib.js,map.tpl,rlLocationFinder.class.php"><![CDATA[]]></update>
+        <update version="4.0.2" files="admin/locationFinder.tpl,admin/locationFinder.inc.php,static/apStyle.css,rlLocationFinderAP.class.php"><![CDATA[]]></update>
+        <update version="4.0.3" files="static/lib.js,rlLocationFinder.class.php,rlLocationFinderAP.class.php"><![CDATA[]]></update>
+        <update version="5.0.0" files="admin/js.tpl,admin/locationFinder.tpl,admin/map.tpl,map.tpl,rlLocationFinder.class.php,rlLocationFinderAP.class.php,static/apStyle.css,static/lib.js"><![CDATA[
+            global $rlDb;
+
+            // Remove legacy config
+            $rlDb->query("DELETE FROM `{db_prefix}config` WHERE `Key` IN ('locationFinder_map_width', 'locationFinder_map_height')");
+
+            // Remove phrases
+            $phrases = array(
+                'config+name+locationFinder_map_width',
+                'config+name+locationFinder_map_height',
+                'config+des+locationFinder_map_width',
+                'locationFinder_set_location_error',
+                'locationFinder_zoom_1',
+                'locationFinder_zoom_11',
+                'locationFinder_zoom_19',
+            );
+            $sql = "DELETE FROM `{db_prefix}lang_keys` WHERE `Plugin` = 'locationFinder' AND `Key` IN ('" . implode("','", $phrases) . "')";
+            $rlDb->query($sql);
+
+            // Remove hooks
+            $hooks_to_be_removed = array(
+                'staticDataRegister',
+                'tplHeader'
+            );
+            $rlDb->query("
+                DELETE FROM `{db_prefix}hooks` 
+                WHERE `Plugin` = 'locationFinder' 
+                AND `Name` IN ('" . implode("','", $hooks_to_be_removed) . "')
+            ");
+        ]]></update>
+        <update version="5.0.1" files="admin/js.tpl,admin/map.tpl,admin/locationFinder.inc.php,admin/locationFinder.tpl,map.tpl,rlLocationFinder.class.php,rlLocationFinderAP.class.php,static/lib.js,i18n/ru.json"><![CDATA[
+            // Remove phrases
+            $phrases = array(
+                'locationFinder_use_location',
+                'locationFinder_your_location',
+                'locationFinder_sync_warning',
+                'locationFinder_mapping_mf_not_installed_error',
+                'config+des+locationFinder_map_zoom',
+            );
+            $sql = "DELETE FROM `{db_prefix}lang_keys` WHERE `Plugin` = 'locationFinder' AND `Key` IN ('" . implode("','", $phrases) . "')";
+            $GLOBALS['rlDb']->query($sql);
+
+            if (in_array('ru', array_keys($GLOBALS['languages']))) {
+                $ru_phrases = json_decode(file_get_contents(RL_PLUGINS . 'locationFinder/i18n/ru.json'), true);
+                foreach ($ru_phrases as $key => $phrase) {
+                    $GLOBALS['rlDb']->updateOne([
+                        'fields' => ['Value' => $phrase],
+                        'where'  => ['Key'   => $key, 'Code' => 'ru'],
+                    ], 'lang_keys');
+                }
+            }
+        ]]></update>
+        <update version="5.0.2" files="rlLocationFinderAP.class.php,static/lib.js"><![CDATA[]]></update>
+    </updates>
+
+    <uninstall><![CDATA[
+        $GLOBALS['reefless']->loadClass('LocationFinder', false, 'locationFinder');
+        $GLOBALS['rlLocationFinder']->uninstall();
+    ]]></uninstall>
+</plugin>

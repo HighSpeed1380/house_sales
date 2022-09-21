@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="fieldBoundBoxes">
+    <title>Field-bound Boxes</title>
+    <description>Allows you to show field attributes in the form of categories in separate boxes</description>
+    <author>John Freeman</author>
+    <owner>Flynax Classifieds Software</owner>
+    <version>2.2.0</version>
+    <date>16.01.2011</date>
+    <controller>field_bound_boxes</controller>
+    <class>FieldBoundBoxes</class>
+    <compatible>4.8.1</compatible>
+
+    <files>
+        <file>admin/field_bound_boxes.inc.php</file>
+        <file>admin/field_bound_boxes.tpl</file>
+        <file>admin/icon_manager.tpl</file>
+        <file>admin/refreshEntry.tpl</file>
+        <file>i18n/ru.json</file>
+        <file>field-bound_box.tpl</file>
+        <file>header.tpl</file>
+        <file>listings_by_field.inc.php</file>
+        <file>listings_by_field.tpl</file>
+        <file>rlFieldBoundBoxes.class.php</file>
+    </files>
+
+    <install><![CDATA[]]></install>
+
+    <hooks>
+        <hook name="apPhpMultifieldGetAvailablePages" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apAjaxRequest" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apTplControlsForm" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpListingsAfterAdd" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="phpListingsAjaxDeleteListing" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpListingsAfterEdit" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpListingFieldsAfterEdit" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apExtDataFormatsUpdate" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apExtListingsUpdate" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpFormatsAjaxDeleteItem" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpFormatsAjaxMassActions" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpFormatsAjaxAddItem" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpFormatsAjaxEditItem" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpFieldsAjaxDeleteField" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpFormatsAjaxDeleteFormat" version="2.0.0"><![CDATA[ ]]></hook>
+        <hook name="apExtListingFieldsUpdate" version="2.0.0"><![CDATA[ ]]></hook>
+        <hook name="apExtBlocksUpdate" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpBlocksAfterEdit" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="afterListingDone" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="editListingAdditionalInfo" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="phpListingsUpgradeListing" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="afterImport" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="cronAdditional" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="phpMetaRelPrevNext" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apExtPagesUpdate" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpPagesAfterEdit" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpListingsMassActions" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apExtPagesSql" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="sitemapExcludedPages" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="sitemapAddPluginUrls" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="tplHeader" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="phpMetaTags" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="listingsModifyWhere" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="listingsModifyPreSelect" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="listingsModifyJoin" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpIndexBottom" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apPhpBlocksGetPageWhere" version="2.0.0"><![CDATA[]]></hook>
+    </hooks>
+
+    <phrases>
+        <phrase version="2.0.0" key="fb_field" module="admin" target="field_bound_boxes" js="1"><![CDATA[Target field]]></phrase>
+        <phrase version="2.0.0" key="fb_show_empty" target="field_bound_boxes" module="admin"><![CDATA[Show empty items]]></phrase>
+        <phrase version="2.0.0" key="fb_html_postfix" target="field_bound_boxes" module="admin"><![CDATA[.html at the end of URLs]]></phrase>
+        <phrase version="2.0.0" key="fb_icons_position" target="field_bound_boxes" module="admin"><![CDATA[Icon position]]></phrase>
+        <phrase version="2.0.0" key="fb_box_settings" target="field_bound_boxes" module="admin"><![CDATA[Box settings]]></phrase>
+        <phrase version="2.0.0" key="fb_icon_settings" target="field_bound_boxes" js="1" module="admin"><![CDATA[Icon settings]]></phrase>
+        <phrase version="2.0.0" key="fb_page_settings" target="field_bound_boxes" module="admin"><![CDATA[Page settings]]></phrase>
+        <phrase version="2.0.0" key="fb_seo_settings" target="field_bound_boxes" module="admin"><![CDATA[Item SEO defaults]]></phrase>
+        <phrase version="2.0.0" key="fb_item_path" target="field_bound_boxes" module="admin"><![CDATA[Item path]]></phrase>
+        <phrase version="2.0.0" key="fb_item_icon" target="field_bound_boxes" module="admin"><![CDATA[Icon]]></phrase>
+        <phrase version="2.0.0" key="fb_icon_deleted" target="field_bound_boxes" module="admin" js="1"><![CDATA[You have successfully removed the icon.]]></phrase>
+        <phrase version="2.0.0" key="fb_option_key" target="field_bound_boxes" module="admin"><![CDATA[option_path]]></phrase>
+        <phrase version="2.0.0" key="fb_items_list" target="field_bound_boxes" module="admin"><![CDATA[All Items]]></phrase>
+        <phrase version="2.0.0" key="fb_recount_text" target="controls" module="admin"><![CDATA[Recount field-bound boxes]]></phrase>
+        <phrase version="2.0.0" key="fb_listings_recounted" target="controls" js="1" module="admin"><![CDATA[Field-bound boxes have been recounted.]]></phrase>
+        <phrase version="2.0.0" key="fb_regenerate_path_desc" target="field_bound_boxes" module="admin"><![CDATA[Leave the field empty to get the URL generated automatically.]]></phrase>
+        <phrase version="2.0.0" key="fb_current_icon" target="field_bound_boxes" module="admin"><![CDATA[Current icon]]></phrase>
+        <phrase version="2.0.0" key="fb_rebuild_box_items" target="field_bound_boxes" module="admin"><![CDATA[Update Items]]></phrase>
+        <phrase version="2.0.0" key="fb_items_recopied" target="field_bound_boxes" js="1" module="admin"><![CDATA[The items have been successfully recopied from the field attributes]]></phrase>
+        <phrase version="2.0.0" key="fb_rebuild_notice" target="field_bound_boxes" module="admin"><![CDATA[Are you sure you want to update the items and recopy field attributes because it will result in loss of icons and other data?]]></phrase>
+        <phrase version="2.0.0" key="fb_seo_defaults_hint" target="field_bound_boxes" module="admin"><![CDATA[You may apply the {item} variable to the <b>fields below</b> and it will be replaced with the actual item name]]></phrase>
+        <phrase version="2.0.0" key="fb_box_style" target="field_bound_boxes" module="admin"><![CDATA[Box design]]></phrase>
+        <phrase version="2.0.0" key="fb_box_style_text" target="field_bound_boxes" module="admin"><![CDATA[Text]]></phrase>
+        <phrase version="2.0.0" key="fb_box_style_text_pic" target="field_bound_boxes" module="admin"><![CDATA[Text and picture]]></phrase>
+        <phrase version="2.0.0" key="fb_box_style_responsive" target="field_bound_boxes" module="admin"><![CDATA[Responsive picture]]></phrase>
+        <phrase version="2.0.0" key="fb_box_style_icon" target="field_bound_boxes" module="admin"><![CDATA[Icon only]]></phrase>
+        <phrase version="2.0.0" key="fb_picture_settings" target="field_bound_boxes" module="admin"><![CDATA[Picture settings]]></phrase>
+        <phrase version="2.0.0" key="fb_use_parent_page" target="field_bound_boxes" module="admin"><![CDATA[Box landing page]]></phrase>
+        <phrase version="2.0.0" key="fb_use_parent_page_hint" target="field_bound_boxes" module="admin"><![CDATA[When enabled, it generates a separate page for the field-bound box that you can manage.]]></phrase>
+        <phrase version="2.0.0" key="fb_columns" target="field_bound_boxes" module="admin"><![CDATA[columns]]></phrase>
+        <phrase version="2.0.0" key="fb_auto" target="field_bound_boxes" module="admin"><![CDATA[Auto]]></phrase>
+        <phrase version="2.0.0" key="fb_responsive_style_icons_hint" target="field_bound_boxes" module="admin"><![CDATA[Min 500px / 500px; use good quality pictures]]></phrase>
+        <phrase version="2.0.0" key="fbb_no_options" module="system"><![CDATA[There are no available options.]]></phrase>
+        <phrase version="2.0.0" key="fbb_orientation" target="field_bound_boxes" module="admin"><![CDATA[Picture orientation]]></phrase>
+        <phrase version="2.0.0" key="fbb_landscape" target="field_bound_boxes" module="admin"><![CDATA[Landscape]]></phrase>
+        <phrase version="2.0.0" key="fbb_portrait" target="field_bound_boxes" module="admin"><![CDATA[Portrait]]></phrase>
+        <phrase version="2.0.0" key="fbb_view_listings" module="frontEnd"><![CDATA[View Listings]]></phrase>
+        <phrase version="2.0.0" key="fbb_picture_side_small" module="system"><![CDATA[Please make sure you filled in the width and height fields; recommended value - 15 and larger]]></phrase>
+        <phrase version="2.0.0" key="fbb_resize_pictures" module="admin" target="field_bound_boxes"><![CDATA[Resize uploaded icons]]></phrase>
+        <phrase version="2.0.0" key="fb_svg_icons" module="admin" js="1" target="field_bound_boxes"><![CDATA[SVG Icons]]></phrase>
+        <phrase version="2.0.0" key="fb_select_from_gallery" module="admin" target="field_bound_boxes"><![CDATA[or [Select from Gallery] ]]></phrase>
+        <phrase version="2.0.0" key="fbb_item_exists_in_box" module="system"><![CDATA[The item has already been added to the box]]></phrase>
+        <phrase version="2.0.0" key="fbb_no_items_found" module="admin" js="1" target="field_bound_boxes"><![CDATA[The item has not been found.]]></phrase>
+        <phrase version="2.0.0" key="fbb_too_much_items_found" module="admin" target="field_bound_boxes"><![CDATA[Too many results found; please narrow down your search.]]></phrase>
+        <phrase version="2.0.0" key="fbb_items_search_hint" module="admin" target="field_bound_boxes"><![CDATA[Please search for field attributes to add more items to the box.]]></phrase>
+        <phrase version="2.0.0" key="fbb_box_added_multiple" module="system"><![CDATA[You have successfully added the new box.<br /><br />The target field contains too many attributes, please use the "Add a New Item" button to search and add more items to the box.]]></phrase>
+        <phrase version="2.0.0" key="fbb_icon_left" module="admin" target="field_bound_boxes"><![CDATA[Left]]></phrase>
+        <phrase version="2.0.0" key="fbb_icon_right" module="admin" target="field_bound_boxes"><![CDATA[Right]]></phrase>
+        <phrase version="2.1.0" key="fbb_counter_single_line" module="admin" target="field_bound_boxes"><![CDATA[Show the counter under the text]]></phrase>
+    </phrases>
+
+    <updates>
+        <update version="1.0.1" files="admin/field_bound_boxes.inc.php,admin/field_bound_boxes.tpl,listings_by_field.inc.php,listings_by_field.tpl"><![CDATA[]]></update>
+        <update version="1.0.2" files="listings_by_field.tpl,listings_by_field.inc.php,rlFieldBoundBoxes.class.php,admin/field_bound_boxes.inc.php,admin/field_bound_boxes.tpl"><![CDATA[]]></update>
+        <update version="1.0.3" files="rlFieldBoundBoxes.class.php,admin/field_bound_boxes.tpl"><![CDATA[]]></update>
+        <update version="1.1.0" files="listings_by_field.tpl,listings_by_field.inc.php,rlFieldBoundBoxes.class.php,field-bound_box.tpl,admin/field_bound_boxes.tpl,admin/field_bound_boxes.inc.php"><![CDATA[]]></update>
+        <update version="1.1.1" files="field-bound_box.tpl,listings_by_field.inc.php"><![CDATA[]]></update>
+        <update version="1.1.2" files="rlFieldBoundBoxes.class.php,admin/field_bound_boxes.inc.php,listings_by_field.inc.php"><![CDATA[]]></update>
+        <update version="1.1.3" files="admin/field_bound_boxes.inc.php,listings_by_field.inc.php"><![CDATA[]]></update>
+        <update version="1.1.4" files="rlFieldBoundBoxes.class.php"><![CDATA[]]></update>
+        <update version="1.1.5" files="admin/field_bound_boxes.inc.php,admin/field_bound_boxes.tpl,listings_by_field.tpl,rlFieldBoundBoxes.class.php,field-bound_box.tpl"><![CDATA[]]></update>
+        <update version="1.1.6" files="admin/field_bound_boxes.inc.php,rlFieldBoundBoxes.class.php,field-bound_box.tpl,listings_by_field.tpl"><![CDATA[]]></update>
+        <update version="1.1.7" files="rlFieldBoundBoxes.class.php"><![CDATA[]]></update>
+        <update version="1.1.8" files="rlFieldBoundBoxes.class.php,listings_by_field.inc.php"><![CDATA[]]></update>
+        <update version="1.1.9" files="rlFieldBoundBoxes.class.php,listings_by_field.inc.php"><![CDATA[]]></update>
+        <update version="1.1.10" files="admin/field_bound_boxes.inc.php"><![CDATA[]]></update>
+        <update version="1.2.0" files="listings_by_field.inc.php,listings_by_field.tpl,rlFieldBoundBoxes.class.php,admin/field_bound_boxes.inc.php,admin/field_bound_boxes.tpl"><![CDATA[]]></update>
+        <update version="1.3.0" files="admin/field_bound_boxes.inc.php,field-bound_box.tpl,listings_by_field.inc.php,rlFieldBoundBoxes.class.php"><![CDATA[]]></update>
+        <update version="2.0.0" files="admin/field_bound_boxes.inc.php,admin/field_bound_boxes.tpl,admin/icon_manager.tpl,admin/refreshEntry.tpl,i18n/ru.json,field-bound_box.tpl,header.tpl,listings_by_field.inc.php,listings_by_field.tpl,rlFieldBoundBoxes.class.php,static/icons/convertible.svg,static/icons/coupe.svg,static/icons/green_car_hybrid.svg,static/icons/hatchback.svg,static/icons/minivan.svg,static/icons/offroad.svg,static/icons/pickup.svg,static/icons/roadster.svg,static/icons/sedan.svg,static/icons/suv.svg,static/icons/van.svg,static/icons/wagon.svg"><![CDATA[]]></update>
+        <update version="2.0.1" files="field-bound_box.tpl,header.tpl,rlFieldBoundBoxes.class.php"><![CDATA[]]></update>
+        <update version="2.1.0" files="admin/field_bound_boxes.inc.php,admin/field_bound_boxes.tpl,field-bound_box.tpl,header.tpl,i18n/ru.json,rlFieldBoundBoxes.class.php"><![CDATA[]]></update>
+        <update version="2.1.1" files="rlFieldBoundBoxes.class.php"><![CDATA[]]></update>
+        <update version="2.1.2" files="rlFieldBoundBoxes.class.php"><![CDATA[]]></update>
+        <update version="2.2.0" files="admin/field_bound_boxes.inc.php,admin/field_bound_boxes.tpl,field-bound_box.tpl,header.tpl,rlFieldBoundBoxes.class.php"><![CDATA[]]></update>
+    </updates>
+    
+    <uninstall><![CDATA[]]></uninstall>
+</plugin>

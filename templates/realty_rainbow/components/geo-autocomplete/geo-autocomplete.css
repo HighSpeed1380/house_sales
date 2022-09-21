@@ -1,0 +1,21 @@
+.geo-autocomplete {
+  position: absolute;
+  border: 2px #F2F2F2 solid;
+  display: none;
+  background: white;
+  min-width: 100px;
+  z-index: 2000;
+  border-radius: 0; }
+  .geo-autocomplete > div {
+    padding: 8px 10px;
+    cursor: pointer; }
+    .geo-autocomplete > div > div {
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 100%;
+      text-overflow: ellipsis;
+      font-size: inherit; }
+    .geo-autocomplete > div:hover, .geo-autocomplete > div.geo-autocomplete__item_active {
+      background: var(--alt-box-bg-color); }
+  .geo-autocomplete_open {
+    display: block; }

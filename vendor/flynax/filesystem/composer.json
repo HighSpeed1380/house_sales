@@ -1,0 +1,42 @@
+{
+  "name": "flynax/filesystem",
+  "description": "",
+  "license": "ISC",
+  "authors": [
+    {
+      "name": "Flynax Classifieds Software",
+      "homepage": "https://www.flynax.com",
+      "role": "Owner"
+    },
+    {
+      "name": "Alex S.",
+      "email": "runexes@me.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.9",
+    "symfony/filesystem": "2.8.39"
+  },
+  "autoload": {
+    "psr-4": {
+      "Flynax\\Component\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.36"
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/"
+    ]
+  },
+  "config": {
+    "platform": {
+      "php": "5.3.9"
+    },
+    "platform-dev": {
+      "php": "5.3.9"
+    }
+  }
+}

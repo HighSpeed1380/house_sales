@@ -1,0 +1,15 @@
+<div class="map-account d-flex flex-column flex-fill">
+    <div class="map-account__picture d-flex[%if !img %] no-picture[%/if%]">
+        <a href="[%:url%]" target="_blank">
+            <img src="[%if img%][%:img%][%else%]data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=[%/if%]"
+                 [%if img_x2 %]
+                 srcset="[%:img_x2%] 2x"
+                 [%/if%]
+                 alt="[%:title%]" />
+        </a>
+    </div>
+    <div class="map-account__info d-flex flex-column flex-fill">
+        <a href="[%:url%]" target="_blank" class="map-account__title flex-fill">[%:title%]</a>
+        <div class="map-account__fields">[%:info%]</div>
+    </div>
+</div>

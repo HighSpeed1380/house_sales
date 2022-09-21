@@ -1,0 +1,56 @@
+@import "../../css/sass/variables"
+@import "../../css/sass/mixins"
+@import "../../css/sass/media"
+
+.map-account
+
+    &__picture
+        position: relative
+        width: 100%
+        padding-bottom: 66%
+
+        img
+            position: absolute
+            display: block
+            width: 100%
+            height: 100%
+            object-fit: contain
+            background: url('../../img/no-account.png') center center no-repeat $color-box-bg
+
+            +respond-to(pixel_ratio)
+                background-image: url('../../img/@2x/no-account.png')
+                background-size: 100px auto
+
+        &:not(.no-picture)
+            img
+                background: $color-box-bg
+
+    &__info
+        padding: 10px
+
+    &__title
+        padding-bottom: 5px
+        font-size: $font-size-2 !important
+        font-weight: $weight-regular
+
+    &__fields
+        word-break: break-word
+
+.leaflet-custom-popup_account
+    .leaflet-popup-content
+        width: 200px
+        min-height: 200px
+
+    .content-placeholder-picture
+        flex: 0 0 150px
+
+    .content-placeholder-info
+        > *:nth-of-type(1)
+            flex: 0 0 70%
+
+        > *:nth-of-type(2)
+            flex: 0 0 30%
+            border-bottom-width: 0
+
+        > *:nth-of-type(3)
+            display: none

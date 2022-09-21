@@ -1,0 +1,35 @@
+@import "../../css/sass/variables"
+
+$gac-box-border-width: $alt-box-bg-border-width !default
+$gac-box-border-color: $color-box-bg !default
+$gac-box-bg-color: white !default
+$gac-box-border-radius: 0 !default
+$gac-item-active-bg-color: $color-alt-box-bg !default
+$gac-item-font-size: inherit !default
+
+.geo-autocomplete
+    position: absolute
+    border: $gac-box-border-width $gac-box-border-color solid
+    display: none
+    background: $gac-box-bg-color
+    min-width: 100px
+    z-index: 2000
+    border-radius: $gac-box-border-radius
+
+    > div
+        padding: 8px 10px
+        cursor: pointer
+
+        > div
+            white-space: nowrap
+            overflow: hidden
+            max-width: 100%
+            text-overflow: ellipsis
+            font-size: $gac-item-font-size
+
+        &:hover,
+        &.geo-autocomplete__item_active
+            background: $gac-item-active-bg-color
+
+    &_open
+        display: block

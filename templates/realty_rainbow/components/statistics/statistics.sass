@@ -1,0 +1,42 @@
+@import "../../css/sass/variables"
+@import "../../css/sass/mixins"
+@import "../../css/sass/media"
+
+.statistics-box
+
+    &__count
+        color: $stats-box-block-style-number-color !important
+
+    &__number
+        font-size: 2.500em
+
+    &__plus
+        font-size: 1.750em
+
+    &.statistics-box_full-width
+        background: url('counter-bg.webp') #414141 no-repeat center top
+        background-attachment: fixed
+        padding: 50px 0 55px
+        position: relative
+
+        &:before
+            content: ''
+            width: 100%
+            height: 100%
+            position: absolute
+            left: 0
+            top: 0
+            background: rgba(8,13,19, 0.8)
+
+        .statistics-box__count
+            color: white !important
+
+        @if $stats-box-block-style-link-color-hover != 'inherit'
+            .statistics-box__link:hover
+                .statistics-box__name
+                    color: $stats-box-block-style-link-color-hover
+
+        .statistics-box__name
+            filter: brightness(1.7)
+            @if $stats-box-block-style-link-color != 'inherit'
+                color: $stats-box-block-style-link-color

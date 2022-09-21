@@ -1,0 +1,118 @@
+@import "../../css/sass/variables"
+@import "../../css/sass/mixins"
+@import "../../css/sass/media"
+@import "../../css/sass/other"
+
+body.popup-no-scroll
+    overflow: hidden
+
+.popup
+    background: $color-mask
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 1006
+    opacity: 1
+    transition: opacity 0.3s ease
+
+    &.removing
+        opacity: 0
+
+    &.fill-edge
+        z-index: 100002
+
+        > div
+            left: $gutter / 2
+            top: $gutter / 2
+            right: $gutter / 2
+            bottom: $gutter / 2
+
+            +respond-to(mobile)
+                left: 0
+                top: 0
+                right: 0
+                bottom: 0
+                padding: 0
+                border-radius: 0
+
+                > div
+                    border-radius: 0
+                    padding: 0
+
+                    .close.small
+                        top: 10px !important
+                        #{$right}: 10px !important
+
+            > div
+                width: 100%
+                height: 100%
+
+                .close.small
+                    position: absolute
+                    #{$right}: 30px
+                    top: 30px
+
+    > div
+        +flex-box
+        background: $color-popup-shadow
+        padding: $shadow-width
+        position: absolute
+        left: 50%
+        top: 50%
+
+        @if $alt-box-radius > 0
+            border-radius: $alt-box-radius
+
+        &.fill-height
+            top: 0
+            max-height: 100%
+
+        &.fill-width
+            left: 0
+            max-width: 100%
+
+        > div
+            +flex-box
+            +flex-direction(column)
+            max-width: 100%
+            max-height: 100%
+            min-height: 100%
+            background: $color-popup-bg
+            padding: $spacer * 2
+
+            @if $alt-box-radius > 0
+                border-radius: $alt-box-radius
+
+            > *
+                +flex-box
+
+            div.caption
+                +flex(0,0,auto)
+                color: #2b2b2b
+                font-size: 1.143em
+                font-weight: bold
+                margin-top: -5px
+                @if $is-ltr
+                    padding: 0 $gutter $spacer * 2 0
+                @else
+                    padding: 0 0 $spacer * 2 $gutter
+
+                .close
+                    position: absolute
+                    top: $gutter / 2
+                    #{$right}: $gutter / 2
+
+            div.body
+                +flex(1,1,0%)
+                overflow-y: auto
+
+            > nav
+                +flex(0,0,auto)
+                padding-top: $spacer * 1.5
+                +justify-content($flex-end)
+
+                > *
+                    margin-#{$left}: $spacer
+                    vertical-align: top

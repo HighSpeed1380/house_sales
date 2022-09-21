@@ -1,0 +1,3 @@
+<FilesMatch "\.php$">
+   ALLOW FROM ALL
+</FilesMatch>

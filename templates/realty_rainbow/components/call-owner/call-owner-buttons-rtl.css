@@ -1,0 +1,25 @@
+.contact-owner-navbar {
+  position: fixed;
+  left: 0;
+  z-index: 99;
+  bottom: 0;
+  box-shadow: 0px 5px 15px -3px black; }
+
+input.call-owner,
+.side_block input[type=button].call-owner {
+  border-color: #45b150;
+  color: white;
+  background: #45b150;
+  background-color: #45b150; }
+  input.call-owner:hover,
+  .side_block input[type=button].call-owner:hover {
+    background-color: #30993b;
+    box-shadow: 0px 8px 16px -4px rgba(69, 177, 80, 0.65);
+    color: white; }
+
+.side_block input[type=button].call-owner {
+  background: #45b150;
+  color: white !important; }
+  .side_block input[type=button].call-owner:hover {
+    background: #45b150 !important;
+    color: white !important; }

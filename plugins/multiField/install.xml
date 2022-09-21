@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin name="multiField">
+    <title>Multifield/Location Filter</title>
+    <description>Adds dependent fields and filters listings by locations</description>
+    <author>Mike Fletcher</author>
+    <owner>Flynax Classifieds Software</owner>
+    <version>2.6.1</version>
+    <date>23.03.2012</date>
+    <controller>multi_formats</controller>
+    <class>MultiField</class>
+    <compatible>4.8.2</compatible>
+
+    <notices>
+        <notice><![CDATA[Follow the link: <a target="_blank" href="https://www.flynax.com/files/manuals/multifield-location-filter-guide.pdf">Configuration Guide for Multifield/Location Filter Plugin</a>]]></notice>
+    </notices>
+
+    <install><![CDATA[]]></install>
+
+    <files>
+        <file>admin/flsource.tpl</file>
+        <file>admin/import.php</file>
+        <file>admin/import_interface.tpl</file>
+        <file>admin/manage_item.tpl</file>
+        <file>admin/multi_formats.tpl</file>
+        <file>admin/multi_formats.inc.php</file>
+        <file>admin/refreshEntry.tpl</file>
+        <file>admin/settings.tpl</file>
+        <file>admin/tplFooter.tpl</file>
+        <file>admin/tplHeader.tpl</file>
+        <file>admin/dataEntries.tpl</file>
+        <file>admin/nearbyCheck.tpl</file>
+        <file>static/aStyle.css</file>
+        <file>static/gallery.png</file>
+        <file>static/lib.js</file>
+        <file>static/lib_admin.js</file>
+        <file>static/autocomplete.js</file>
+        <file>static/gallery.svg</file>
+        <file>static/nearby.svg</file>
+        <file>autocomplete.tpl</file>
+        <file>location_selector.tpl</file>
+        <file>geo_box.tpl</file>
+        <file>mfield.tpl</file>
+        <file>mfield_account.tpl</file>
+        <file>rlGeoFilter.class.php</file>
+        <file>rlMultiField.class.php</file>
+        <file>rlMultiFieldAP.class.php</file>
+        <file>tplFooter.tpl</file>
+        <file>tplHeader.tpl</file>
+        <file>i18n/ru.json</file>
+        <file>nearby_header.tpl</file>
+    </files>
+
+    <hooks>
+        <hook name="ajaxRequest" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="tplHeader" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="tplFooter" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="staticDataRegister" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="pageinfoArea" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="adaptValueBottom" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="tplListingFieldSelect" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="tplSearchFieldSelect" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="tplRegFieldSelect" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="tplProfileFieldSelect" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="addListingPreFields" version="2.0.0"><![CDATA[]]></hook>
+        <hook name="apTplFooter" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apTplFieldsFormBottom" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpAccountFieldsTop" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpListingFieldsBeforeEdit" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpAccountFieldsBeforeEdit" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpFieldsAjaxDeleteAField" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpListingFieldsTop" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpFieldsAjaxDeleteField" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpDataFormatsBottom" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpFormatsAjaxDeleteFormatPreDelete" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpAccountsTop" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpListingsTop" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apTplHeader" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpSubmitProfileEnd" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apTplAccountFieldSelect" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apTplListingFieldSelect" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpListingFieldsAfterAdd" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpAccountFieldsAfterAdd" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apTplControlsForm" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="init" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="phpCategoriesGetCategoriesCache" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="phpCategoriesGetCategories" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="listingsModifyWhere" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="listingsModifyWhereByAccount" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="listingsModifyWhereByPeriod" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="listingsModifyWhereFeatured" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="smartyFetchHook" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="boot" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="accountsGetDealersByCharSqlWhere" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="specialBlock" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="ajaxRequest" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="phpBeforeLoginValidation" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="phpUrlBottom" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="phpMetaTags" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="listingsModifyPreSelect" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="phpOriginalUrlRedirect" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="apAjaxLangExportSelectPhrases" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="phpRecentlyAddedModifyPreSelect" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="apAjaxRequest" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpConfigBeforeUpdate" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="apPhpConfigBottom" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="phpValidateUserLocation" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="apPhpAccountsValidate" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="phpSearchOnMapDefaultAddress" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="pageinfoArea" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="phpGetProfileModifyField" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="apPhpCategoriesBottom" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook name="listingDetailsBeforeMetaData" version="2.0.0" class="GeoFilter"><![CDATA[]]></hook>
+        <hook name="apMixConfigItem" version="2.0.0" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook version="2.0.2" name="apPhpFormatsAjaxDeleteFormat" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook version="2.1.0" name="apPhpConfigAfterUpdate" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook version="2.1.0" name="apPhpLanguageAfterImport" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook version="2.1.0" name="apPhpAfterAddLanguage" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook version="2.1.0" name="apPhpAfterDeleteLanguage" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook version="2.2.0" name="phpCommonFieldValuesAdaptationTop"><![CDATA[]]></hook>
+        <hook version="2.2.0" name="phpCommonFieldValuesAdaptationBottom"><![CDATA[]]></hook>
+        <hook version="2.2.1" name="apPhpDataFormatsAfterEdit" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook version="2.2.1" name="apExtDataFormatsUpdate" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook version="2.2.1" name="phpAccountAddressAssign"><![CDATA[]]></hook>
+        <hook version="2.3.0" name="apPhpPagesValidate" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook version="2.3.0" name="apPhpCategoriesDataValidate" class="MultiFieldAP"><![CDATA[]]></hook>
+        <hook version="2.3.0" name="sitemapAddPluginUrls" class="GeoFilter"><![CDATA[]]></hook>
+        <hook version="2.3.0" name="phpCategoryGetDF"><![CDATA[]]></hook>
+        <hook version="2.3.0" name="getPhrase"><![CDATA[]]></hook>
+        <hook version="2.3.0" name="phpCacheUpdateDataFormats"><![CDATA[]]></hook>
+        <hook version="2.3.1" name="phpCacheGetBeforeFetch"><![CDATA[]]></hook>
+        <hook version="2.4.0" name="tplHeaderUserNav" class="GeoFilter"><![CDATA[]]></hook>
+        <hook version="2.5.0" name="phpListingTypeBrowseQuickSearchMode" class="GeoFilter"><![CDATA[]]></hook>
+        <hook version="2.5.0" name="accountTypeTop" class="GeoFilter"><![CDATA[]]></hook>
+        <hook version="2.5.0" name="phpGetPersonalAddressAfter" class="GeoFilter"><![CDATA[]]></hook>
+        <hook version="2.6.0" name="listingsModifyField" class="GeoFilter"><![CDATA[]]></hook>
+        <hook version="2.6.0" name="listingsModifyOrder" class="GeoFilter"><![CDATA[]]></hook>
+        <hook version="2.6.0" name="listingTop" class="GeoFilter"><![CDATA[]]></hook>
+        <hook version="2.6.0" name="listingAfterFields" class="GeoFilter"><![CDATA[]]></hook>
+        <hook version="2.6.0" name="listingsModifyFieldByPeriod" class="GeoFilter"><![CDATA[]]></hook>
+        <hook version="2.6.0" name="listingsModifyOrderByPeriod" class="GeoFilter"><![CDATA[]]></hook>
+        <hook version="2.6.0" name="listingsModifySelectFeatured" class="GeoFilter"><![CDATA[]]></hook>
+        <hook version="2.6.0" name="listingsModifyOrderFeatured" class="GeoFilter"><![CDATA[]]></hook>
+        <hook version="2.6.1" name="utilsRedirectURL" class="GeoFilter"><![CDATA[]]></hook>
+    </hooks>
+
+    <phrases>
+        <phrase key="ext_multi_formats_manager" module="ext"><![CDATA[Multileveled Data Entry Manager]]></phrase>
+        <phrase key="mf_edit_item" module="admin"><![CDATA[Edit Entry]]></phrase>
+        <phrase key="mf_add_item" module="admin"><![CDATA[Add an Entry]]></phrase>
+        <phrase key="mf_formats_list" module="admin"><![CDATA[All Entries]]></phrase>
+        <phrase key="mf_manage_items" module="admin"><![CDATA[Manage Items]]></phrase>
+        <phrase key="mf_order_type" module="admin"><![CDATA[Sorting order]]></phrase>
+        <phrase key="mf_name" module="admin"><![CDATA[Name]]></phrase>
+        <phrase key="mf_lf_created" module="admin"><![CDATA[The system has added a listing field to the level automatically. Click [here] to edit the field.]]></phrase>
+        <phrase key="mf_af_created" module="admin"><![CDATA[The system has added a registration field to the level automatically. Click [here] to edit the field.]]></phrase>
+        <phrase key="mf_related_listing_fields" module="admin"><![CDATA[Listing fields linked to this level]]></phrase>
+        <phrase key="mf_related_account_fields" module="admin"><![CDATA[Registration fields linked to this level]]></phrase>
+        <phrase key="mf_related_fields" module="admin"><![CDATA[Connected Fields]]></phrase>
+        <phrase key="mf_no_related_fields" module="admin"><![CDATA[There are no fields.]]></phrase>
+        <phrase key="mf_import_flsource" module="admin"><![CDATA[Import Data]]></phrase>
+        <phrase key="mf_server_datalist" module="admin"><![CDATA[Data entries available on the Flynax server.]]></phrase>
+        <phrase key="mf_import_all" module="admin"><![CDATA[Import the entire database]]></phrase>
+        <phrase key="mf_import_partially" module="admin"><![CDATA[Select items to be imported]]></phrase>
+        <phrase key="mf_choose_items_to_import" module="admin"><![CDATA[Select items to be imported]]></phrase>
+        <phrase key="mf_import_without_parent_hint" module="admin"><![CDATA[Check the box to import the parent item.]]></phrase>
+        <phrase key="mf_import_without_parent_ignore" module="admin"><![CDATA[Include the parent entry]]></phrase>
+        <phrase key="mf_import_completed" module="admin"><![CDATA[The items have been successfully imported.]]></phrase>
+        <phrase key="mf_geofilter" module="admin"><![CDATA[Geo filtering]]></phrase>
+        <phrase key="mf_path" module="admin"><![CDATA[Path]]></phrase>
+        <phrase key="mf_path_short" module="admin"><![CDATA[The path is too short.]]></phrase>
+        <phrase key="mf_path_exists" module="admin"><![CDATA[The path is already in use; please consider using a different path.]]></phrase>
+        <phrase key="mf_refresh" module="admin"><![CDATA[Refresh]]></phrase>
+        <phrase key="mf_geo_path_rebuilt" module="admin"><![CDATA[The paths have been successfully refreshed.]]></phrase>
+        <phrase key="mf_fields_rebuilt" module="admin"><![CDATA[The fields have been successfully refreshed.]]></phrase>
+        <phrase version="2.0.0" key="mf_refresh_in_progress" module="admin"><![CDATA[Processing, please wait...]]></phrase>
+        <phrase key="ext_notice_delete_item" module="ext"><![CDATA[Are you sure you want to remove the item?]]></phrase>
+        <phrase key="mf_importing" module="admin"><![CDATA[Processing]]></phrase>
+        <phrase key="mf_geo_type_location" module="frontEnd"><![CDATA[Type your location here]]></phrase>
+        <phrase key="mf_geo_box_default" module="frontEnd"><![CDATA[Geo filtering is not configured.]]></phrase>
+        <phrase version="1.0.2" key="mf_import_current" module="admin"><![CDATA[Current item]]></phrase>
+        <phrase version="1.0.2" key="mf_import_subprogress" module="admin"><![CDATA[Item progress]]></phrase>
+        <phrase version="1.0.2" key="mf_import" module="admin"><![CDATA[Import]]></phrase>
+        <phrase version="1.0.2" key="mf_import_resume" module="admin"><![CDATA[Continue importing]]></phrase>
+        <phrase version="1.2.0" key="mf_rebuild" module="admin"><![CDATA[Refresh dependent fields (Multifield)]]></phrase>
+        <phrase version="1.2.0" key="mf_rebuild_path" module="admin"><![CDATA[Refresh paths (Multifield)]]></phrase>
+        <phrase version="1.2.0" key="mf_rebuild_no_format_configured" module="admin"><![CDATA[There are no multileveled data entries for refreshing.]]></phrase>
+        <phrase version="1.2.0" key="mf_rebuild_no_fields_configured" module="admin"><![CDATA[There are no fields connected with multileveled data entries for refreshing.]]></phrase>
+        <phrase version="2.0.0" key="mf_geo_denied_hint" module="admin"><![CDATA[Location filtering is not available for system pages.]]></phrase>
+        <phrase version="2.0.0" key="mf_subdomains_prompt" module="admin"><![CDATA[The location structure on subdomains have been changed. Are you sure you want to refresh the location structure in URLs?]]></phrase>
+        <phrase version="2.0.0" key="mf_search_all_levels" module="admin"><![CDATA[Search in all data entries]]></phrase>
+        <phrase version="2.0.0" key="mf_apply_location_to_url" module="admin"><![CDATA[Add location to URL]]></phrase>
+        <phrase version="2.0.0" key="mf_preselect_data_hint" module="admin"><![CDATA[Note: The plugin only adds current/selected locations to location-related fields.]]></phrase>
+        <phrase version="2.0.0" key="mf_rebuild_path_promt" module="admin"><![CDATA[Location URLs will be rebuilt with location names and your custom URLs will be overwritten.]]></phrase>
+        <phrase version="2.0.0" key="mf_rebuild_path_in_progress" module="admin"><![CDATA[Refreshing location URLs in process; closing the page will stop the process.]]></phrase>
+        <phrase version="2.0.0" key="mf_no_geo_filtering_format" module="admin"><![CDATA[There are no data entries connected with geo filtering. Changes in the settings will not have any effect.]]></phrase>
+        <phrase version="2.0.0" key="mf_geo_location" module="admin"><![CDATA[Geolocation]]></phrase>
+        <phrase version="2.0.0" key="config+option+mf_geo_subdomains_type_mixed" module="admin"><![CDATA[Mixed]]></phrase>
+        <phrase version="2.0.0" key="config+option+mf_geo_subdomains_type_combined" module="admin"><![CDATA[Full]]></phrase>
+        <phrase version="2.0.0" key="config+option+mf_geo_subdomains_type_unique" module="admin"><![CDATA[City only]]></phrase>
+        <phrase version="2.0.0" key="mf_geo_prefilling_group" module="admin"><![CDATA[Prefilling Locations in Fields on Pages]]></phrase>
+        <phrase version="2.2.0" key="mf_import_sync_phrases" module="admin"><![CDATA[Import translation]]></phrase>
+        <phrase version="2.3.0" key="mf_path_exists_in_mf" module="admin"><![CDATA[The "{path}" path is already in use for the location; please consider using a different path.]]></phrase>
+        <phrase version="2.3.0" key="config+option+mf_urls_in_sitemap_all" module="admin"><![CDATA[All URLs]]></phrase>
+        <phrase version="2.3.0" key="config+option+mf_urls_in_sitemap_not_empty" module="admin"><![CDATA[URLs with listings/accounts only]]></phrase>
+        <phrase version="2.3.0" key="mf_sitemap_dryrun_box_content" module="admin"><![CDATA[To make sure your server offers enough resources, the Plugin will try to rebuild the sitemap, do you confirm the action?]]></phrase>
+        <phrase version="2.3.0" key="mf_sitemap_rebuilding" module="admin"><![CDATA[The sitemap is being rebuilt...]]></phrase>
+        <phrase version="2.4.0" key="mf_is_your_location" module="frontEnd" js="1"><![CDATA[Is {location} your location?]]></phrase>
+        <phrase version="2.4.0" key="mf_select_location" module="frontEnd"><![CDATA[Select Location]]></phrase>
+        <phrase version="2.4.0" key="mf_no_location_in_popover" module="frontEnd"><![CDATA[We were unable to detect your location, do you want to select your city from the list?]]></phrase>
+        <phrase version="2.4.0" key="mf_select_city_hint" module="frontEnd"><![CDATA[Search for a city or select popular from the list]]></phrase>
+        <phrase version="2.4.0" key="config+option+mf_select_interface_box" module="admin"><![CDATA[Box]]></phrase>
+        <phrase version="2.4.0" key="config+option+mf_select_interface_usernavbar" module="admin"><![CDATA[User Navigation Bar in header]]></phrase>
+        <phrase version="2.4.0" key="mf_reset_location" module="frontEnd"><![CDATA[Reset Location]]></phrase>
+        <phrase version="2.6.0" key="mf_nearby_listings_hint" module="frontEnd"><![CDATA[Similar listings within nearby locations]]></phrase>
+        <phrase version="2.5.4" key="mf_geo_filter_field_restriction" module="admin" target="listing_fields" js="1"><![CDATA[You are unable to change the data entry of the field assigned to the geo filtration]]></phrase>
+        <phrase version="2.5.4" key="mf_inactive_parent_status_hint" module="admin" target="multi_formats" js="1"><![CDATA[Parent item is inactive]]></phrase>
+        <phrase version="2.6.0" key="mf_enable_nearby_hint" module="admin" target="settings" js="1"><![CDATA[Coordinate details are missing from your location database. Click OK to get them added automatically, or Cancel the pop-up and enter the coordinates manually.]]></phrase>
+        <phrase version="2.6.0" key="mf_database_mismatch_nearby_hint" module="admin" target="settings" js="1"><![CDATA[Coordinate details are missing from your location database; please enter the coordinates manually.]]></phrase>
+        <phrase version="2.6.0" key="mf_coordinates" module="admin" target="multi_formats"><![CDATA[Coordinates]]></phrase>
+    </phrases>
+
+    <configs key="geo_filter_config" name="Geo Filter">
+        <![CDATA[]]>
+        <config version="2.0.0" key="mf_geo_autodetect" name="Auto detection of user location" type="bool"><![CDATA[1]]></config>
+        <config version="2.0.0" key="mf_geofilter_expiration" name="Cookie expiration period" type="text" description="The number of days, during which the system will keep a user location in the browser cookie."><![CDATA[90]]></config>
+        <config version="2.6.0" key="mf_show_nearby_listings" name="Show nearby listings" type="bool"><![CDATA[0]]></config>
+        <config version="2.6.0" key="mf_nearby_distance" name="Nearby listings radius" type="text" description="km from the target location center" validate="int"><![CDATA[150]]></config>
+        <config version="2.4.0" key="mf_select_interface" name="Select location in" type="select" values="box,usernavbar"><![CDATA[box]]></config>
+        <config version="2.0.0" key="mf_autocomplete_divider" name="Autocomplete Field" type="divider"><![CDATA[]]></config>
+        <config version="2.0.0" key="mf_geo_block_autocomplete" name="Autocomplete field in Location Filter box" type="bool"><![CDATA[1]]></config>
+        <config version="2.0.0" key="mf_geo_autocomplete_limit" name="Number of suggested locations" type="text" validate="int"><![CDATA[10]]></config>
+        <config version="2.5.4" key="mf_popular_locations_level" name="Popular locations in the pop-up" type="select" values="country_level2"><![CDATA[country_level2]]></config>
+        <config version="2.0.0" key="mf_seo_divider" name="SEO" type="divider"><![CDATA[]]></config>
+        <config version="2.0.0" key="mf_geo_subdomains_type" name="Location structure in URLs" type="select" values="mixed,combined,unique" description="&lt;div style=&quot;padding: 8px 0 5px;line-height: 15px;&quot;&gt;&lt;div class=&quot;hide&quot;&gt;&lt;b&gt;Mixed&lt;/b&gt; - usa.domain.com/california/miami/;&lt;br&gt;&lt;b&gt;Full&lt;/b&gt; - usa-california-miami.domain.com;&lt;br&gt;&lt;b&gt;City only&lt;/b&gt; - miami.domain.com.&lt;/div&gt;&lt;div&gt;&lt;b&gt;Full&lt;/b&gt; - www.domain.com/usa/california/miami/;&lt;br&gt;&lt;b&gt;City only&lt;/b&gt; - www.domain.com/miami/.&lt;/div&gt;&lt;/div&gt;"><![CDATA[combined]]></config>
+        <config version="2.1.0" key="mf_geo_subdomains" name="Location on subdomains" type="bool" description="Unavailable if one of the listing types is enabled on a subdomain (See &quot;Listing type URL&quot; setting)."><![CDATA[0]]></config>
+        <config version="2.0.0" key="mf_listing_geo_urls" name="Add locations to listing URLs" type="bool" description="Generates the URLs of Listing Details using location details specified in listings."><![CDATA[0]]></config>
+        <config version="2.1.0" key="mf_multilingual_path" name="Multilingual paths" type="bool" description="&lt;div&gt;&lt;div&gt;Allows you to build paths of location pages in other languages, e.g. praha.site.com or www.site.com/mu&gbreve;la/&lt;/div&gt;&lt;div&gt;The option can be enabled with 2 and more active languages on the site.&lt;/div&gt;&lt;/div&gt;"><![CDATA[0]]></config>
+        <config version="2.5.0" key="mf_account_page_filtration" name="Filtering ads on seller page" type="select" values="none,filter,url" description="&lt;div style=&quot;padding: 8px 0 5px;line-height: 15px;&quot;&gt;&lt;b&gt;None&lt;/b&gt; - Ads are not filtered on the seller page;&lt;br&gt;&lt;b&gt;Filter&lt;/b&gt; - Ads are filtered on the seller page by locations selected by visitors;&lt;br&gt;&lt;b&gt;URL&lt;/b&gt; - Locations are added to seller page URLs; no filtering is done.&lt;/div&gt;"><![CDATA[none]]></config>
+        <config version="2.3.0" key="mf_urls_in_sitemap" name="Add GEO-modified URLs to Sitemap" type="select" values="all,not_empty" description="&lt;div&gt;Adding URLs with locations to the sitemap is a resource and time consuming process.&lt;br&gt;If you get an error increase the following PHP parameters - memory_limit and max_execution_time.&lt;/div&gt;"><![CDATA[]]></config>
+        <config version="2.3.0" key="mf_home_in_sitemap" name="Home page URL in sitemap" type="bool" description="&lt;div&gt;When enabled, the home page will be added to the sitemap with all the locations because the system cannot detect properly availability of listings/accounts on the page.&lt;/div&gt;"><![CDATA[0]]></config>
+        <config version="2.0.0" key="mf_filtering_divider" name="Filtering Listings/Accounts on Pages" type="divider"><![CDATA[]]></config>
+    </configs>
+
+    <blocks>
+        <block key="geo_filter_box" name="Location Filter" side="left" type="smarty" tpl="1" version="2.0.0"><![CDATA[
+            {include file=$smarty.const.RL_PLUGINS|cat:"multiField"|cat:$smarty.const.RL_DS|cat:"geo_box.tpl"}
+        ]]></block>
+    </blocks>
+
+    <updates>
+        <update version="1.0.1"><![CDATA[ ]]></update>
+        <update version="1.0.2" files="static/lib.js,admin/import.php,rlMultiField.class.php,admin/flsource.tpl,admin/import_interface.tpl,admin/multi_formats.tpl,admin/multi_formats.inc.php,static/aStyle.css,autocomplete.inc.php,geo_block.tpl,static/jquery.geo_autocomplete.js"><![CDATA[]]></update>
+        <update version="1.0.3" files="rlMultiField.class.php"><![CDATA[]]></update>
+        <update version="1.1.0" files="rlMultiField.class.php,geo_block.tpl,admin/import.php"><![CDATA[]]></update>
+        <update version="1.1.1" files="rlMultiField.class.php,admin/import.php,admin/multi_formats.tpl"><![CDATA[]]></update>
+        <update version="1.2.0" files="rlMultiField.class.php,admin/import.php,admin/multi_formats.tpl,static/lib.js,autocomplete.inc.php"><![CDATA[]]></update>
+        <update version="1.2.1" files="rlMultiField.class.php"><![CDATA[]]></update>
+        <update version="1.2.2" files="rlMultiField.class.php"><![CDATA[]]></update>
+        <update version="1.2.3" files="rlMultiField.class.php"><![CDATA[]]></update>
+        <update version="1.3.0" files="autocomplete.inc.php,rlMultiField.class.php,geo_block.tpl,list_level.tpl,admin/import.php,admin/multi_formats.inc.php,static/style.css"><![CDATA[]]></update>
+        <update version="1.3.1" files="geo_block.tpl,rlMultiField.class.php,admin/multi_formats.inc.php,admin/multi_formats.tpl"><![CDATA[]]></update>
+        <update version="1.4.0" files="rlMultiField.class.php,admin/import.php,admin/multi_formats.inc.php,mysql/geo_mapping.sql,geo_block.tpl,static/jquery.geo_autocomplete.js"><![CDATA[]]></update>
+        <update version="1.4.1" files="rlMultiField.class.php,admin/import.php"><![CDATA[]]></update>
+        <update version="1.4.2" files="rlMultiField.class.php"><![CDATA[]]></update>
+        <update version="1.4.3" files="rlMultiField.class.php,mysql/geo_mapping.sql,admin/multi_formats.inc.php,geo_block.tpl,static/style.css"><![CDATA[]]></update>
+        <update version="1.4.4" files="mysql/geo_mapping.sql,admin/multi_formats.tpl,admin/multi_formats.inc.php,rlMultiField.class.php"><![CDATA[]]></update>
+        <update version="1.4.5"><![CDATA[]]></update>
+        <update version="1.4.6" files="rlMultiField.class.php,admin/import.php"><![CDATA[]]></update>
+        <update version="1.4.7" files="rlMultiField.class.php"><![CDATA[]]></update>
+        <update version="1.5.0" files="rlMultiField.class.php,list_level.tpl,admin/multi_formats.inc.php,admin/import.php"><![CDATA[ ]]></update>
+        <update version="1.5.1" files="rlMultiField.class.php"><![CDATA[ ]]></update>
+        <update version="1.5.2" files="rlMultiField.class.php"><![CDATA[ ]]></update>
+        <update version="2.0.0" files=".htaccess,geo_box.tpl,rlGeoFilter.class.php,rlMultiField.class.php,rlMultiFieldAP.class.php,tplFooter.tpl,tplHeader.tpl,admin/import.php,admin/multi_formats.inc.php,admin/multi_formats.tpl,static/lib.js,static/lib_admin.js,admin/refreshEntry.tpl,admin/.htaccess,admin/flsource.tpl,admin/import_interface.tpl,mfield.tpl,mfield_account.tpl,static/.htaccess,static/aStyle.css,static/autocomplete.js,static/gallery.png,admin/settings.tpl,admin/tplFooter.tpl,admin/tplHeader.tpl"><![CDATA[]]></update>
+        <update version="2.0.1" files="rlGeoFilter.class.php,rlMultiFieldAP.class.php"><![CDATA[]]></update>
+        <update version="2.0.2" files="rlGeoFilter.class.php,rlMultiFieldAP.class.php"><![CDATA[]]></update>
+        <update version="2.1.0" files="admin/manage_item.tpl,admin/multi_formats.inc.php,admin/multi_formats.tpl,admin/settings.tpl,admin/import.php,admin/refreshEntry.tpl,static/autocomplete.js,rlGeoFilter.class.php,rlMultiField.class.php,rlMultiFieldAP.class.php,tplHeader.tpl,geo_box.tpl"><![CDATA[]]></update>
+        <update version="2.1.1" files="rlMultiField.class.php,rlGeoFilter.class.php"><![CDATA[]]></update>
+        <update version="2.1.2" files="admin/multi_formats.tpl,rlGeoFilter.class.php"><![CDATA[]]></update>
+        <update version="2.2.0" files="admin/import.php,admin/manage_item.tpl,admin/multi_formats.inc.php,admin/multi_formats.tpl,admin/refreshEntry.tpl,admin/tplFooter.tpl,admin/tplHeader.tpl,admin/flsource.tpl,admin/import_interface.tpl,admin/dataEntries.tpl,static/lib.js,rlGeoFilter.class.php,rlMultiField.class.php,rlMultiFieldAP.class.php,mfield.tpl,tplHeader.tpl,tplFooter.tpl"><![CDATA[]]></update>
+        <update version="2.2.1" files="admin/dataEntries.tpl,rlMultiField.class.php,rlMultiFieldAP.class.php,tplFooter.tpl"><![CDATA[]]></update>
+        <update version="2.3.0" files="admin/multi_formats.inc.php,admin/tplHeader.tpl,rlMultiField.class.php,rlGeoFilter.class.php,admin/settings.tpl,rlMultiFieldAP.class.php,static/lib.js,i18n/ru.json"><![CDATA[]]></update>
+        <update version="2.3.1" files="rlMultiField.class.php,rlGeoFilter.class.php"><![CDATA[]]></update>
+        <update version="2.3.2" files="geo_box.tpl,rlMultiField.class.php,static/autocomplete.js,tplHeader.tpl"><![CDATA[]]></update>
+        <update version="2.4.0" files="admin/import.php,admin/multi_formats.inc.php,autocomplete.tpl,geo_box.tpl,location_selector.tpl,rlGeoFilter.class.php,rlMultiField.class.php,rlMultiFieldAP.class.php,static/gallery.svg,tplFooter.tpl,tplHeader.tpl"><![CDATA[]]></update>
+        <update version="2.5.0" files="rlGeoFilter.class.php,rlMultiField.class.php,tplHeader.tpl"><![CDATA[]]></update>
+        <update version="2.5.1" files="admin/multi_formats.inc.php,admin/multi_formats.tpl,location_selector.tpl,rlGeoFilter.class.php,rlMultiField.class.php,rlMultiFieldAP.class.php,i18n/ru.json"><![CDATA[]]></update>
+        <update version="2.5.2" files="rlGeoFilter.class.php,rlMultiField.class.php,rlMultiFieldAP.class.php,tplFooter.tpl,location_selector.tpl"><![CDATA[]]></update>
+        <update version="2.5.3" files="rlGeoFilter.class.php,rlMultiField.class.php"><![CDATA[]]></update>
+        <update version="2.5.4" files="admin/settings.tpl,admin/dataEntries.tpl,admin/import.php,admin/manage_item.tpl,admin/multi_formats.inc.php,admin/multi_formats.tpl,i18n/ru.json,static/lib.js,rlGeoFilter.class.php,rlMultiField.class.php,rlMultiFieldAP.class.php,geo_box.tpl,location_selector.tpl,tplFooter.tpl,tplHeader.tpl"><![CDATA[]]></update>
+        <update version="2.6.0" files="admin/manage_item.tpl,admin/multi_formats.inc.php,admin/multi_formats.tpl,admin/nearbyCheck.tpl,admin/refreshEntry.tpl,i18n/ru.json,nearby_header.tpl,rlGeoFilter.class.php,rlMultiField.class.php,rlMultiFieldAP.class.php,static/lib.js,static/nearby.svg,tplHeader.tpl"><![CDATA[]]></update>
+        <update version="2.6.1" files="location_selector.tpl,rlGeoFilter.class.php,rlMultiField.class.php,tplFooter.tpl,tplHeader.tpl"><![CDATA[]]></update>
+    </updates>
+
+    <uninstall><![CDATA[]]></uninstall>
+</plugin>

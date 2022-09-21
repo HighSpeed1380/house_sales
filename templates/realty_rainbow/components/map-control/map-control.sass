@@ -1,0 +1,70 @@
+@import "../../css/sass/variables"
+@import "../../css/sass/mixins"
+
+.leaflet-control
+    position: relative
+    pointer-events: auto
+
+.leaflet-top .leaflet-control
+    margin-top: 15px
+
+.leaflet-bottom .leaflet-control
+    margin-bottom: 15px
+
+.leaflet-left .leaflet-control
+    margin-#{$left}: 15px
+
+.leaflet-right .leaflet-control
+    margin-#{$right}: 15px
+
+.leaflet-bar
+    +flex-box
+    +flex-direction(column)
+
+    > a
+        width: 38px
+        height: 38px
+        background: rgba($map-control-bg-color,.7)
+        margin-bottom: 2px
+        position: relative
+        transition: background 0.3s ease
+        text-indent: -100px
+        overflow: hidden
+
+        &:before,
+        &:after
+            content: ''
+            width: 18px
+            height: 2px
+            position: absolute
+            background: white
+            top: 18px
+            left: 10px
+
+        &.leaflet-control-zoom-in:after
+            width: 2px
+            height: 18px
+            top: 10px
+            left: 18px
+
+        &.leaflet-control-zoom-out:after
+            display: none
+
+        &.leaflet-disabled
+            filter: grayscale(1)
+            opacity: .6
+
+        &:not(.leaflet-disabled):hover
+            background: rgba($map-control-bg-color,1)
+
+    &.leaflet-control-location a:after,
+    &.leaflet-control-location :before
+        display: none
+
+    &.leaflet-control-location a > svg
+        position: absolute
+        top: 9px
+        left: 9px
+        width: 20px
+        height: 20px
+        fill: white

@@ -1,0 +1,207 @@
+# Configures the footer on server-generated documents
+ServerSignature Off
+
+# enable apache morRewrite module
+RewriteEngine on
+
+# The URL prefix to be used for per-directory
+RewriteBase /
+
+# Block BAD user agents
+RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Bot\ mailto:craftbot@yahoo.com [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ChinaClaw [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Custo [OR]
+RewriteCond %{HTTP_USER_AGENT} ^DISCo [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Download\ Demon [OR]
+RewriteCond %{HTTP_USER_AGENT} ^eCatch [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EirGrabber [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailSiphon [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailWolf [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Express\ WebPictures [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ExtractorPro [OR]
+RewriteCond %{HTTP_USER_AGENT} ^EyeNetIE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^FlashGet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GetRight [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GetWeb! [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Go!Zilla [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Go-Ahead-Got-It [OR]
+RewriteCond %{HTTP_USER_AGENT} ^GrabNet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Grafula [OR]
+RewriteCond %{HTTP_USER_AGENT} ^HMView [OR]
+RewriteCond %{HTTP_USER_AGENT} HTTrack [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Stripper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Sucker [OR]
+RewriteCond %{HTTP_USER_AGENT} Indy\ Library [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^InterGET [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Internet\ Ninja [OR]
+RewriteCond %{HTTP_USER_AGENT} ^JetCar [OR]
+RewriteCond %{HTTP_USER_AGENT} ^JOC\ Web\ Spider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^larbin [OR]
+RewriteCond %{HTTP_USER_AGENT} ^LeechFTP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mass\ Downloader [OR]
+RewriteCond %{HTTP_USER_AGENT} ^MIDown\ tool [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mister\ PiX [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Navroad [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NearSite [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetAnts [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Net\ Vampire [OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetZIP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Octopus [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Explorer [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Navigator [OR]
+RewriteCond %{HTTP_USER_AGENT} ^PageGrabber [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Papa\ Foto [OR]
+RewriteCond %{HTTP_USER_AGENT} ^pavuk [OR]
+RewriteCond %{HTTP_USER_AGENT} ^pcBrowser [OR]
+RewriteCond %{HTTP_USER_AGENT} ^RealDownload [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ReGet [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SiteSnagger [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SmartDownload [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SuperBot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^SuperHTTP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Surfbot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^tAkeOut [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Teleport\ Pro [OR]
+RewriteCond %{HTTP_USER_AGENT} ^VoidEYE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Image\ Collector [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Sucker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebAuto [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebCopier [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebFetch [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebGo\ IS [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebLeacher [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebReaper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebSauger [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Website\ eXtractor [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Website\ Quester [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebStripper [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebWhacker [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebZIP [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Widow [OR]
+RewriteCond %{HTTP_USER_AGENT} ^WWWOFFLE [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus
+# Note: The final RewriteCond must NOT use the [OR] flag.
+
+# Return 403 Forbidden error.
+RewriteRule .* - [F,L]
+
+# The following rules are for bandwidth-hogging download tools
+<IfModule mod_setenvif.c>
+    SetEnvIf user-agent "libwww-perl" stayout=1
+    SetEnvIf user-agent "Download Demon" stayout=1
+    SetEnvIf user-agent "GetRight" stayout=1
+    SetEnvIf user-agent "GetWeb!" stayout=1
+    SetEnvIf user-agent "Go!Zilla" stayout=1
+    SetEnvIf user-agent "Go-Ahead-Got-It" stayout=1
+    SetEnvIf user-agent "GrabNet" stayout=1
+    SetEnvIf user-agent "TurnitinBot" stayout=1
+
+    # This line denies access to all of the above tools
+    deny from env=stayout
+</IfModule>
+
+# Block possible mySQL injections
+RewriteCond %{REQUEST_METHOD} ^(PUT|CONNECT|TRACE|TRACK) [NC,OR]
+RewriteCond %{THE_REQUEST} (\\r|\\n|%0A|%0D) [NC,OR]
+RewriteCond %{HTTP_REFERER} (<|>|'|%0A|%0D|%3C|%3E|%00) [NC,OR]
+RewriteCond %{HTTP_COOKIE} (<|>|'|%0A|%0D|%3C|%3E|%00) [NC,OR]
+RewriteCond %{REQUEST_URI} ^/(,|;|:|<|>|">|"<|/|\\\.\.\\).{0,9999} [NC,OR]
+RewriteCond %{QUERY_STRING} (;|<|>|'|"|\)|%0A|%0D|%22|%3C|%3E|%00).*(/\*|union|select|insert|cast|set|declare|drop|update|md5|benchmark) [NC,OR]
+RewriteCond %{QUERY_STRING} (localhost|loopback|127\.0\.0\.1) [NC,OR]
+RewriteCond %{QUERY_STRING} (<|>|'|%0A|%0D|%3C|%3E|%00) [NC]
+# Note: The final RewriteCond must NOT use the [OR] flag.
+
+# Return 403 Forbidden error.
+RewriteRule .* - [F,L]
+
+# set files headers
+<IfModule mod_headers.c>
+    <FilesMatch "\.(png|gif|jpg|jpeg|woff)$">
+        Header set Cache-Control "max-age=5356800, public, must-revalidate"
+    </FilesMatch>
+
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "max-age=2678400, public, must-revalidate"
+    </FilesMatch>
+    <FilesMatch "\.(js|css|xml|gz)$">
+        Header append Vary: Accept-Encoding
+    </FilesMatch>
+    Header append Connection keep-alive
+    <FilesMatch ".(eot|ttf|otf|woff|tmpl|js|css|jpg|png|svg|gif|webp)">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
+
+# deflate static content
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/x-component text/css application/x-javascript application/javascript
+</IfModule>
+
+# http://httpd.apache.org/docs/2.2/mod/mod_expires.html
+<ifmodule mod_expires.c>
+    <filesmatch ".(css|js|png|gif|jpg|jpeg|htc|webp)$">
+        ExpiresActive on
+        ExpiresDefault "access plus 1 year"
+    </filesmatch>
+</ifmodule>
+
+# allow request methods
+<Limit POST PUT DELETE GET OPTIONS HEAD>
+    Order deny,allow
+    Allow from All
+</Limit>
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} ^/templates
+RewriteRule templates\/(.*?\/)(.*)$ templates/template_core/$2 [L]
+
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^.*$ - [L]
+
+ErrorDocument 404 /404.html
+
+RewriteRule ^api/v[0-9]+/?.*$ plugins/api/request.php [QSA,L]
+
+# non .html redirect
+#RewriteCond %{REQUEST_URI} !(\.[a-z]+)$ [NC]
+#RewriteRule ^([^\/]{3,})/$ http://%{HTTP_HOST}/$1.html [NC,L,R=301]
+
+# non trailing redirect
+#RewriteCond %{REQUEST_URI} !(\.[a-z]+|[\/]|\?.+)$ [NC]
+RewriteCond %{REQUEST_URI} !(\.[a-z]+|[\/])$ [NC]
+RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI}/ [NC,L,R=301]
+
+# define system languages
+#RewriteRule ^([a-zA-Z]{2})$ index.php?page=$1 [QSA,L]
+
+# define listing
+#RewriteRule ^(([\w\-\_]+)?/)([^/]+)(/.+)-l?([0-9]+).html$ index.php?page=$2&rlVareables=$3$4&listing_id=$5 [QSA,L]
+RewriteRule ^([^/]+)(/?(.{2,}))?-l?([0-9]+).html$ index.php?page=$1&rlVareables=$3&listing_id=$4 [QSA,L]
+
+# wildcard request
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d [OR]
+RewriteCond %{REQUEST_URI} ^\/
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteCond %{HTTP_HOST} \.{2,} [NC] # 1 is localhost usage, 2 is global usage
+RewriteCond %{HTTP_HOST} ^([^\.]+)\..+\.+ [NC]
+RewriteCond %{HTTP_HOST} ^([^\.]+) [NC]
+RewriteRule (.*) index.php?page=%1&wildcard&rlVareables=$1 [QSA,L]
+
+# define paging
+RewriteRule ^([^//]+)/?(.*)?/index([0-9]*).html$ index.php?page=$1&rlVareables=$2&pg=$3 [QSA,L]
+
+# account request (sub-directory)
+RewriteRule ^((\w{2})/)?([\w-_]{3,})$ index.php?page=$3&lang=$2&account_request [QSA,L]
+
+# define single pages
+RewriteRule ^([^//]+)/?(^/*)?.html$ index.php?page=$1 [QSA,L]
+
+# define other pages
+RewriteRule ^([^//]+)/?(.*)?/?(.*)?(.html|/+)$ index.php?page=$1&rlVareables=$2 [QSA,L]
+
+RewriteRule sitemap.xml$ plugins/sitemap/sitemap.php [QSA,L]
